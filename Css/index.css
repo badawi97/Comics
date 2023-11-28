@@ -1,60 +1,41 @@
-.wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    font-weight: bold;
-    text-align: center;
-}
+ /* Styling for the popup container */
+ .container {
+     width: 100%;
+     background-color: #fff;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     /* Set a fixed height for the container */
+ }
 
-.wrapper>* {
-    padding: 10px;
-    flex: 1 100%;
-}
+ /* Styling for the header */
+ .header {
+     background-color: #f0f0f0;
+     padding: 10px;
+     border-bottom: 1px solid #ccc;
+     flex: 20%;
+     /* Set header to take 20% of the container height */
+ }
 
-.header {
-    background: tomato;
-}
+ /* Styling for the body */
+ .main {
+     padding: 10px;
+     flex: 60%;
+     /* Set body to take 60% of the container height */
+ }
 
-.footer {
-    background: lightgreen;
-}
+ /* Styling for the footer */
+ .footer {
+     display: flex;
+     justify-content: flex-end;
+     padding: 10px;
+     border-top: 1px solid #ccc;
+     flex: 20%;
+     /* Set footer to take 20% of the container height */
+ }
 
-.main {
-    text-align: left;
-    background: deepskyblue;
-}
-
-.aside-1 {
-    background: gold;
-}
-
-.aside-2 {
-    background: hotpink;
-}
-
-@media all and (min-width: 600px) {
-    .aside {
-        flex: 1 0 0;
-    }
-}
-
-@media all and (min-width: 800px) {
-    .main {
-        flex: 3 0px;
-    }
-
-    .aside-1 {
-        order: 1;
-    }
-
-    .main {
-        order: 2;
-    }
-
-    .aside-2 {
-        order: 3;
-    }
-
-    .footer {
-        order: 4;
-    }
-}
+ /* Styling for buttons in the footer */
+ .footer button {
+     margin-left: 10px;
+ }
