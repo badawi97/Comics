@@ -4,9 +4,43 @@
     margin: 0;
 }
 
-.container {
-    padding: 1% 10% 4%;
-    background-color: rgb(255, 255, 255);
+.black-button {
+    color: #fff !important;
+    background: #151515 !important;
+}
+
+.white-button {
+    color: #838383 !important;
+    background: #fff !important;
+}
+
+.rounded-button {
+    border: 1px solid #b4b4b4 !important;
+    border-radius: 17px !important;
+    width: 102px !important;
+    padding: 7px !important;
+    text-align: center;
+}
+
+.rounded-button :hover {
+    opacity: 0.8;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    height: 32vh;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .row::after {
