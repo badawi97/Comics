@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../Css/main.css">
     <link rel="stylesheet" href="../Css/navigation.css">
     <link rel="stylesheet" href="../Css/index.css">
+    <link rel="stylesheet" href="../Css/login.css">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
                 <ul class="navigation">
                     <li><a href="#">published</a></li>
                     <li><a class="rounded-button black-button" href="#">publish</a></li>
-                    <li><a class="rounded-button white-button" href="#">profile</a></li>
+                    <li><a id="loginBtn" class="rounded-button white-button" href="#">Login</a></li>
                 </ul>
             </div>
 
@@ -99,7 +100,37 @@
         <footer class="footer">
             Footer
         </footer>
+        <div id="loginPopup" class="popup">
+            <div class="popup-content">
+                <span><a class="close" id="closeBtn">&times;</a> </span>
+                <form id="loginForm">
+                    <div class="center">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="control-field">
+                                    <label class="control-label" for="username">Username:</label>
+                                    <input class="control-input" type="text" id="username" name="username" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="control-field">
+                                    <label class="control-label" for="password">Password:</label>
+                                    <input class="control-input" type="password" id="password" name="password" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button class="rounded-button white-button" type="button" onclick="login()">Login</button>
+                </form>
+            </div>
+        </div>
     </div>
+    <script src="../Js/login.js"></script>
+
     <script>
         let slideIndex = 1;
         showSlides(slideIndex);

@@ -4,6 +4,32 @@
     margin: 0;
 }
 
+.center {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.control-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.control-field label {
+    width: 100%;
+    display: block;
+    padding: 10px;
+}
+
+
+.control-field input {
+    width: 100%;
+    display: block;
+    padding: 6px;
+    font-size: 20px;
+}
+
 .black-button {
     color: #fff !important;
     background: #151515 !important;
@@ -14,6 +40,12 @@
     background: #fff !important;
 }
 
+.white-button:hover {
+    color: #838383 !important;
+    background: #ddcfcf !important;
+}
+
+
 .rounded-button {
     border: 1px solid #b4b4b4 !important;
     border-radius: 17px !important;
@@ -22,7 +54,7 @@
     text-align: center;
 }
 
-.rounded-button :hover {
+.rounded-button:hover {
     opacity: 0.8;
 }
 
