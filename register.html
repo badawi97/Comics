@@ -94,34 +94,32 @@
         <footer class="footer">
 
         </footer>
-        <div id="loginPopup" class="popup">
-            <div class="popup-content">
-                <span><a class="close" id="closeBtn">&times;</a> </span>
-                <form id="loginForm">
-                    <div class="center">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="control-field">
-                                    <label class="control-label" for="username">Username:</label>
-                                    <input class="control-input" type="text" id="username" name="username" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="control-field">
-                                    <label class="control-label" for="password">Password:</label>
-                                    <input class="control-input" type="password" id="password" name="password" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Start signin popup-->
+        <div id="loginPopup" class="signin-container">
+            <div class="signin-contant">
+                <div id="closeBtn" class="top-right" onclick="CloseSigninPopup()">
+                    <i class="fa fa-window-close"></i>
+                </div>
 
-
-                    <button class="rounded-button white-button" type="button" onclick="login()">Login</button>
-                </form>
+                <div class="signin-header">
+                    <h1>Welcome Back</h1>
+                    <p>Please Enter Your Detials To Sign In</p>
+                    <img src="Images/profile-img.png" alt="">
+                </div>
+                <div class="signin-body">
+                    <form id="loginForm">
+                        <label for="userName">
+                            <input id="username" placeholder="User Name" type="text">
+                        </label>
+                        <label for="password">
+                            <input id="password" placeholder="Password" type="password">
+                        </label>
+                        <button class="rounded-button white-button" type="button" onclick="login()">Login</button>
+                    </form>
+                </div>
             </div>
         </div>
+        <!-- End signin popup-->
     </div>
     <script src="Js/login.js"></script>
 
