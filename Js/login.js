@@ -39,7 +39,7 @@ function login() {
                 loginForm.reset();
                 hideLoginPopup();
             } else {
-                alert('Login failed: ' + data.message);
+                alert('invalid credential');
             }
         })
         .catch(error => {
