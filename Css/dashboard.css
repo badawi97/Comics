@@ -1,0 +1,24 @@
+.side-main {
+    position: absolute;
+    height: 66vh;
+    width: 10%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #1a8d9f;
+    z-index: 10;
+    display: inline-block;
+    padding: 0.5%;
+}
+
+.body-main {
+    height: 66vh;
+    padding: 0.5%;
+    width: 90%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    background: #f2f2f2;
+    overflow-y: auto;
+}

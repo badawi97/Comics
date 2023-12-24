@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Register
+    </title>
+    <link rel="stylesheet" href="Css/main.css">
+    <link rel="stylesheet" href="Css/navigation.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/login.css">
+    <link rel="stylesheet" href="Css/register.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+
+            <div class="left-item">
+                <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+            <div class="right-item">
+                <ul class="navigation">
+                    <li><a href="#">published</a></li>
+                    <li><a class="rounded-button black-button" href="#">publish</a></li>
+                    <li><a id="loginBtn" class="rounded-button white-button" href="#">Login</a></li>
+                </ul>
+            </div>
+
+        </header>
+        <main class="main">
+            <div class="body-main">
+                <form>
+                    <div class="center">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="">
+                                    <input placeholder="First Name" type="text">
+                                </label>
+                            </div>
+                            <div class="col-6">
+                                <label for="">
+                                    <input placeholder="Last Name" type="text">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="">
+                                    <input placeholder="E-Mail" type="email">
+                                </label>
+                            </div>
+                            <div class="col-6">
+                                <label for="">
+                                    <input placeholder="Password" type="password">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="">
+                                    <input placeholder="Phone Number" type="text">
+                                </label>
+                            </div>
+                            <div class="col-6">
+                                <label for="">
+                                    <input placeholder="Address" type="text">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="">
+                                    <input accept="image/*" type='file' id="imageInput" />
+                                    <img id="imageProfile" src="Images/profile-img.png" alt="your image" style=" width: 150px;
+                                        height: 150px; " />
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="rounded-button black-button width-100-percent mt-1"
+                                    type="submit">Register Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer">
+
+        </footer>
+        <div id="loginPopup" class="popup">
+            <div class="popup-content">
+                <span><a class="close" id="closeBtn">&times;</a> </span>
+                <form id="loginForm">
+                    <div class="center">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="control-field">
+                                    <label class="control-label" for="username">Username:</label>
+                                    <input class="control-input" type="text" id="username" name="username" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="control-field">
+                                    <label class="control-label" for="password">Password:</label>
+                                    <input class="control-input" type="password" id="password" name="password" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button class="rounded-button white-button" type="button" onclick="login()">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="Js/login.js"></script>
+
+    <script src="Js/register.js">
+    </script>
+</body>
+
+</html>

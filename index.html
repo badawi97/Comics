@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="Css/main.css">
+    <link rel="stylesheet" href="Css/navigation.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+
+            <div class="left-item">
+                <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+            <div class="right-item">
+                <ul class="navigation">
+                    <li><a href="#">published</a></li>
+                    <li><a class="rounded-button black-button" href="#">publish</a></li>
+                    <li><a id="loginBtn" class="rounded-button white-button" href="#">Login</a></li>
+                    <li><a id="loginBtn" class="rounded-button white-button" href="register.html">Register</a></li>
+                </ul>
+            </div>
+
+        </header>
+        <main class="main">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="Images/fisrt comic.jpeg" alt="Image 1">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="Images/second comic.jpeg" alt="Image 2">
+                </div>
+
+                <!-- Add more slides as needed -->
+
+                <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <!-- Add more dots as needed -->
+                </div>
+            </div>
+            <div class="comics-container">
+
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card">
+                            <a href="comic-viewer.html?comic=storybaord1">
+                                <img src="Images/fisrt comic.jpeg" alt="First Comic">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <a href="comic-viewer.html?comic=storyboard2">
+                                <img src="Images/second comic.jpeg" alt="Second Comic">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <img src="Images/third comic.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <img src="Images/fourth comic.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            Footer
+        </footer>
+        <!-- Start signin popup-->
+        <div id="loginPopup" class="signin-container">
+            <div class="signin-contant">
+                <div id="closeBtn" class="top-right" onclick="CloseSigninPopup()">
+                    <i class="fa fa-window-close"></i>
+                </div>
+
+                <div class="signin-header">
+                    <h1>Welcome Back</h1>
+                    <p>Please Enter Your Detials To Sign In</p>
+                    <img src="Images/profile-img.png" alt="">
+                </div>
+                <div class="signin-body">
+                    <form id="loginForm">
+                        <label for="userName">
+                            <input id="username" placeholder="User Name" type="text">
+                        </label>
+                        <label for="password">
+                            <input id="password" placeholder="Password" type="password">
+                        </label>
+                        <button class="rounded-button white-button" type="button" onclick="login()">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End signin popup-->
+    </div>
+    <script src="Js/login.js"></script>
+
+    <script src="Js/slideshow.js"></script>
+
+</body>

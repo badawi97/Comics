@@ -6,9 +6,9 @@ session_start();
 
 // Replace these values with your actual database credentials
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$database = "your_database";
+$username = "root";
+$password = "";
+$database = "ComicsDb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -26,21 +26,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Perform validation or authentication logic here
 
         // For simplicity, let's just perform a query to check if the user exists
-        $query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
+        $query = "SELECT * FROM user WHERE UserName = '$username' AND Password = '$password'";
         $result = $conn->query($query);
 
         if ($result->num_rows > 0) {
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
-            echo 'success';
+            echo json_encode(['status' => 'success', 'message' => 'Login successful']);
         } else {
-            echo 'error';
+            echo json_encode(['status' => 'error', 'message' => 'Incorrect password']);
         }
     } else {
-        echo 'error';
+        echo 'invalid input';
     }
 } else {
-    echo 'error';
+    echo 'not login query';
 }
 
 // Close connection

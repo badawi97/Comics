@@ -82,6 +82,10 @@
 
 }
 
+.width-100-percent {
+    width: 100% !important;
+}
+
 [class*="col-"] {
     float: left;
     padding: 15px;
