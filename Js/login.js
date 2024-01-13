@@ -14,6 +14,10 @@ function showLoginPopup() {
     document.getElementById('loginPopup').style.display = 'block';
 }
 
+function navigateToDashboard() {
+    window.location.href = "dashboard.html";
+}
+
 function login() {
     debugger
 
@@ -33,9 +37,9 @@ function login() {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                alert('Login successful!');
                 loginForm.reset();
                 hideLoginPopup();
+                navigateToDashboard()
             } else {
                 alert('invalid credential');
             }

@@ -48,12 +48,10 @@
         <div class="collapse navbar-collapse left-item" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ml-2">
-                    <a class="nav-link orange-hover" data-translation-key="features" href="#">Features</a>
+                    <a class="nav-link orange-hover" data-translation-key="My Comics" href="#">My
+                        Comics</a>
                 </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link rounded-button black-button" data-translation-key="features"
-                        href="#">Features</a>
-                </li>
+
                 <li class="nav-item ml-2">
                     <a id="loginBtn" data-translation-key="login" class="nav-link rounded-button white-button"
                         href="#">Login</a>
@@ -61,6 +59,12 @@
                 <li class="nav-item ml-2">
                     <a class="nav-link rounded-button white-button" data-translation-key="register"
                         href="register.html">Register</a>
+                </li>
+                <li class="nav-item ml-2">
+                    <a class="nav-link rounded-button white-button" data-translation-key="Profile" href="#">
+                        <img src="Images/avatars/WhatsApp Image 2024-01-13 at 7.36.34 PM.jpeg" style="height: 20px; width: 20px; border-radius: 50%; 
+                            border: solid 1px var(--primeColor);
+                            " alt="">Profile</a>
                 </li>
                 <li class="nav-item ml-2">
                     <a href="#" onclick="toggleLanguage()" data-translation-key="language"
@@ -83,20 +87,15 @@
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" data-interval="2000" height="500" src="Images/website-icon.png"
+                    <img class="d-block w-100" data-interval="2000" height="500" src="Images/slider/website-icon.png"
                         alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" data-interval="2000" height="500" src="Images/third comic.jpeg"
+                    <img class="d-block w-100" data-interval="2000" height="500" src="Images/slider/website-icon2.png"
                         alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" data-interval="2000" height="500" src="Images/fisrt comic.jpeg"
-                        alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -112,19 +111,19 @@
         <div class="container-fliud">
             <form action="">
                 <div class="radio-buttons">
-                    <label for="all" class="white-button radio-button active">
+                    <label for="all" data-translation-key="All" class="white-button radio-button active">
                         <input id="all" value="0" name="comicFilterType" type="radio" class="hidden-radio">
                         All
                     </label>
-                    <label for="romantic" class="white-button radio-button">
+                    <label for="romantic" data-translation-key="Romantic" class="white-button radio-button">
                         <input id="romantic" value="1" name="comicFilterType" type="radio" class="hidden-radio">
                         Romantic
                     </label>
-                    <label for="comedy" class="white-button radio-button">
+                    <label for="comedy" data-translation-key="Comedy" class="white-button radio-button">
                         <input id="comedy" value="2" name="comicFilterType" type="radio" class="hidden-radio">
                         Comedy
                     </label>
-                    <label class="white-button radio-button">
+                    <label data-translation-key="Other" class="white-button radio-button">
                         <input name="comicFilterType" type="radio" class="hidden-radio"> Other
                     </label>
                 </div>
@@ -175,7 +174,7 @@
             <div class="row p-3 my-2 ">
                 <div class="col-12">
                     <div class="button-group-footer-column">
-                        <h6>Download COMICS now!</h6>
+                        <h6 data-translation-key="downloadComicsNow">Download COMICS now!</h6>
                         <div class="button-group-footer-row mt-2">
 
                             <a class="button-footer"><img width="100" src="Images/footr/Download-on-the-App-Store.png"
@@ -190,12 +189,12 @@
             <div class="row my-2">
                 <div class="col-12">
                     <div class="button-group-footer-row">
-                        <a href="about.html" class="button-footer">About</a>
-                        <a class="button-footer">FeedBack</a>
-                        <a class="button-footer">Help</a>
-                        <a class="button-footer">Terms</a>
-                        <a class="button-footer">Privacy</a>
-                        <a class="button-footer">Contact</a>
+                        <a href="about.html" class="button-footer" data-translation-key="aboutMe">About</a>
+                        <a class="button-footer" data-translation-key="feedBacks">FeedBack</a>
+                        <a class="button-footer" data-translation-key="help">Help</a>
+                        <a class="button-footer" data-translation-key="terms">Terms</a>
+                        <a class="button-footer" data-translation-key="privacy">Privacy</a>
+                        <a class="button-footer" data-translation-key="contact">Contact</a>
                     </div>
                 </div>
             </div>
