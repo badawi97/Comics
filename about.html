@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Images/arabic-logo-white-png.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="Css/main.css">
+    <link rel="stylesheet" href="Css/about.css">
+    <link rel="stylesheet" href="Css/login.css">
+
+
+    <!-- #region font-awesome icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- #endregion font-awesome icon-->
+
+    <!-- #region bootstrap cdn  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- #endregion bootstrap cdn  -->
+</head>
+
+<body>
+    <!-- #region navigation bar  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- #region logo button -->
+        <a class="navbar-brand" href="index.html">
+            <img src="Images/arabic-logo-white-png.png" width="100" height="60" alt="">
+        </a>
+        <!-- #endregion logo button -->
+
+        <!-- #region menu button show to fit mobile mode --- not shown in normal screens -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- #endregion menu button show -->
+
+        </div>
+        <!-- #region left menu items buttons -->
+        <div class="collapse navbar-collapse left-item" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item ml-2">
+                    <a id="loginBtn" data-translation-key="login" class="nav-link rounded-button white-button"
+                        href="#">Login</a>
+                </li>
+                <li class="nav-item ml-2">
+                    <a class="nav-link rounded-button white-button" data-translation-key="register"
+                        href="register.html">Register</a>
+                </li>
+                <li class="nav-item ml-2">
+                    <a href="#" onclick="toggleLanguage()" data-translation-key="language"
+                        class="nav-link rounded-button black-button">Language
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- #endregion left menu items buttons -->
+
+    </nav>
+    <!-- #endregion navigation bar  -->
+
+    <div id="resizableDiv">
+        <video autoplay muted loop id="myVideo">
+            <source src="Video/2d-video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        var prevScrollPos = window.scrollY;
+
+        window.addEventListener("scroll", function () {
+            var currentScrollPos = window.scrollY;
+
+            var scrollDirection = (currentScrollPos > prevScrollPos) ? 'down' : 'up';
+
+            prevScrollPos = currentScrollPos;
+
+            if (scrollDirection === 'down') {
+                document.getElementById("resizableDiv").style.width = "100%";
+            } else {
+                document.getElementById("resizableDiv").style.width = "80%";
+            }
+        });
+    </script>
+    <script src="Js/login.js"></script>
+    <script src="Js/scrollTopBtn.js"></script>
+    <script src="Js/language.js"></script>
+
+    <!-- #region bootstrap cdn  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+    <!-- #endregion bootstrap cdn  -->
+
+</body>
+
+</html>

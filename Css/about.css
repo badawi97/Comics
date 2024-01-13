@@ -1,0 +1,19 @@
+#resizableDiv {
+    position: static;
+    margin: auto;
+    top: 10%;
+    width: 80%;
+    height: auto;
+    min-width: 80vw;
+    max-width: 100vw;
+    transition: all 0.3s ease-in-out;
+}
+
+video {
+    width: 100%;
+}
+
+body {
+    height: 1500px;
+    /* To create enough scrollable space */
+}

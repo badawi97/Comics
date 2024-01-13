@@ -22,9 +22,7 @@ function login() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    // Perform validation or send data to server for authentication
 
-    // For simplicity, let's assume the login is successful
     fetch('http://localhost/Comics/Comics/Php/login.php', {
         method: 'POST',
         headers: {

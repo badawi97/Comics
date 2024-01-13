@@ -26,7 +26,7 @@
 }
 
 .signin-header h1 {
-    color: #18a5c0;
+    color: var(--primeColor);
 }
 
 .signin-header p {
@@ -37,7 +37,8 @@
 .signin-header img {
     border-radius: 50%;
     width: 20%;
-    border: 1px solid #ee3030;
+    height: 120px;
+    border: 1px solid --primeColor;
     margin-top: 5%;
 
 }

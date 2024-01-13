@@ -1,76 +1,107 @@
- /* Styling for the popup container */
- .container {
-     width: 100%;
-     background-color: #fff;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-     display: flex;
-     flex-direction: column;
-     height: 100vh;
-     /* Set a fixed height for the container */
- }
+.radio-buttons {
+    display: flex;
+    width: 100%;
+    justify-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
 
- /* Styling for the header */
- .header {
-     background: #fff;
-     padding: 1.4% 1%;
-     border-bottom: 1px solid #ccc;
-     flex: 10%;
-     /* Set header to take 20% of the container height */
- }
+}
 
- /* Styling for the body */
- .main {
-     padding: 10px;
-     flex: 90%;
-     overflow-y: auto;
-     /* Set body to take 60% of the container height */
- }
+.radio-button {
+    padding: 1.3rem;
+    cursor: pointer;
+    margin: 0 !important;
+    font-weight: bold;
+}
 
- /* .footer {
-     display: flex;
-     justify-content: flex-end;
-     padding: 10px;
-     border-top: 1px solid #ccc;
-     flex: 20%;
- } */
+.hidden-radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
 
- /* Styling for buttons in the footer */
- .footer button {
-     margin-left: 10px;
- }
+.white-button.radio-button.active {
+    background-color: var(--primeColor) !important;
+    color: #fff !important;
+}
 
- .comics-container {
-     width: 60%;
-     display: block;
-     margin: auto;
- }
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: red;
+}
 
- .slideshow-container {
-     max-width: 1000px;
-     position: relative;
-     margin: auto;
- }
+.card:hover .overlay {
+    opacity: 1;
+}
 
- .mySlides {
-     display: none;
+.icon {
+    color: white;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
 
-     img {
-         width: 100%;
-         height: 300px;
-         /* Set the desired height for all images */
-         object-fit: cover;
-         /* Ensure images maintain their aspect ratio */
-     }
- }
+.button-group-footer-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+}
 
+.button-footer {
+    position: relative;
+    cursor: pointer;
+}
 
+.button-footer:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #ccc;
+    right: -1.5rem;
+    top: 0;
+}
 
- .dot {
-     height: 15px;
-     width: 15px;
-     margin: 0 2px;
-     background-color: #bbb;
-     border-radius: 50%;
-     display: inline-block;
-     transition: background-color 0.6s ease;
- }
+.button-group-footer-row .button-footer:last-child:after {
+    content: none;
+}
+
+.button-group-footer-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.copyright {
+    color: #c5c5c5;
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 16px;
+    position: relative;
+    text-align: center;
+}
+
+.ico_foot_logo {
+    background-position: -447px -1046px;
+    background-repeat: no-repeat;
+    height: 36px;
+    width: 100px;
+}
