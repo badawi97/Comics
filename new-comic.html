@@ -1,27 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comic Upload</title>
+    <link rel="icon" href="Images/arabic-logo-white-png.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="Css/main.css">
+    <link rel="stylesheet" href="Css/dashboard.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/login.css">
+    <link rel="icon" href="Images/arabic-logo-white-png.png" type="image/x-icon">
+
+    <!-- #region font-awesome icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- #endregion font-awesome icon-->
+
+    <!-- #region bootstrap cdn  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- #endregion bootstrap cdn  -->
 </head>
 
 <body>
-    <h1>Upload Comic</h1>
-    <form id="comicForm" enctype="multipart/form-data">
-        <label for="imageFiles">Upload Multiple Images:</label>
-        <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*" required>
+    <!-- #region navigation bar  -->
+    <nav id="headerNav" class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- #region logo button -->
+        <a class="navbar-brand" href="index.html">
+            <img src="Images/arabic-logo-white-png.png" width="100" height="60" alt="">
+        </a>
+        <!-- #endregion logo button -->
 
-        <label for="zipFile">Upload Zip File:</label>
-        <input type="file" name="zipFile" id="zipFile" accept=".zip" required>
+        <!-- #region menu button show to fit mobile mode --- not shown in normal screens -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- #endregion menu button show -->
 
-        <button type="button" onclick="uploadComic()">Upload Comic</button>
-    </form>
+        </div>
+        <!-- #region left menu items buttons -->
+        <div class="collapse navbar-collapse  left-item" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item ml-2">
+                    <a class="nav-link orange-hover" data-translation-key="addNewComic" href="new-comic.html"></a>
+                </li>
+                <li class="nav-item ml-2">
+                    <a class="nav-link rounded-button white-button" data-translation-key="Profile" href="#">
+                        <img src="Images/avatars/WhatsApp Image 2024-01-13 at 7.36.34 PM.jpeg" style="height: 20px; width: 20px; border-radius: 50%; 
+                            border: solid 1px var(--primeColor);
+                            margin-right: 0.5rem;" alt="">Profile</a>
+                </li>
+                <li class="nav-item ml-2">
+                    <select onchange="toggleLanguage()" id="language" data-translation-key="Language"
+                        class="custom-select">
+                        <option value="ar">Ar</option>
+                        <option value="en">En</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <!-- #endregion left menu items buttons -->
 
-    <div id="output"></div>
+    </nav>
+    <!-- #endregion navigation bar  -->
+
+    <div class="container-fluid" style="height: 100vh; background: #f4f4f4;">
+        <h1>Upload Comic</h1>
+        <form id="comicForm" enctype="multipart/form-data">
+            <label for="imageFiles">Upload Multiple Images:</label>
+            <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*" required>
+
+            <label for="zipFile">Upload Zip File:</label>
+            <input type="file" name="zipFile" id="zipFile" accept=".zip" required>
+
+            <button type="button" onclick="uploadComic()">Upload Comic</button>
+        </form>
+
+        <div id="output"></div>
+        <!-- #region Footer-->
+        <div class="container mt-5">
+            <div class="row p-3 my-2 ">
+                <div class="col-12">
+                    <div class="button-group-footer-column">
+                        <h6 data-translation-key="downloadComicsNow"></h6>
+                        <div class="button-group-footer-row mt-2">
+
+                            <a class="button-footer"><img width="100" src="Images/footr/Download-on-the-App-Store.png"
+                                    alt="Download-on-the-App-Store"></a>
+                            <a class="button-footer"><img width="100" src="Images/footr/GET-IT-on-Google-Play.png"
+                                    alt="GET-IT-on-Google-Play"></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <div class="button-group-footer-row">
+                        <a href="https://www.instagram.com/arabi.comics/" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.instagram.com/arabi.comics/" target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/arabi.comics/" target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/arabi.comics/" target="_blank">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <div class="button-group-footer-row">
+                        <a href="about.html" class="button-footer" data-translation-key="about"></a>
+                        <a class="button-footer" data-translation-key="feedbacks"></a>
+                        <a class="button-footer" data-translation-key="help"></a>
+                        <a class="button-footer" data-translation-key="terms"></a>
+                        <a class="button-footer" data-translation-key="privacy"></a>
+                        <a class="button-footer" data-translation-key="contactUs"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row  mt-2">
+                <div class="col-12">
+                    <div class="button-group-footer-column">
+                        <p class="copyright">ⓒ NAVER COMICS Ltd.</p>
+                        <p class="foot_logo"><span class="ico_foot_logo">COMICS</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #endregion Footer -->
+
+    </div>
+    <!-- #region scrolling to top button -->
+    <button id="scrollToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+    <!-- #endregion scrolling to top button -->
 
     <script src="Js/new-comic.js"></script>
+    <script src="Js/scrollTopBtn.js"></script>
+    <script src="Js/language.js"></script>
 </body>
 
 </html>

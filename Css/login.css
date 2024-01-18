@@ -46,8 +46,7 @@
 .signin-body {
     width: 80%;
     position: absolute;
-    margin-left: 10%;
-    margin-top: 5%;
+    margin: 0 10%;
 }
 
 .signin-body label {

@@ -112,13 +112,13 @@ body {
 
 .width-100-percent {
     width: 100% !important;
+
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .f-1-2 {
     font-size: 1.2rem;
-}
-
-#mainContent>div:nth-child(2)>div:nth-child(2)>div>div>a {
-    color: #000;
-    font-size: 24px;
 }

@@ -19,3 +19,9 @@
     background: #bcbcbc6e;
     border-radius: 0.3rem;
 }
+
+
+#mainContent>div:nth-child(2)>div:nth-child(2)>div>div>a {
+    color: #000;
+    font-size: 24px;
+}

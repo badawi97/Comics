@@ -38,7 +38,7 @@
     width: 100%;
     opacity: 0;
     transition: .3s ease;
-    background-color: red;
+    background: #4a20e2;
 }
 
 .card:hover .overlay {
