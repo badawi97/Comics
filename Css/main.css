@@ -3,6 +3,20 @@ html {
     --primeColor: #ff9423;
 }
 
+*::-webkit-scrollbar {
+    width: 11px !important;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--secondaryColor) !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primeColor) !important;
+    border-radius: 6px !important;
+    border: 3px solid var(--secondaryColor) !important;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -28,25 +42,13 @@ body {
 }
 
 
-body::-webkit-scrollbar {
-    width: 11px;
-}
-
 body {
     scrollbar-width: thin;
     scrollbar-color: var(--primeColor) var(--secondaryColor);
     background: #f4f4f4;
 }
 
-body::-webkit-scrollbar-track {
-    background: var(--secondaryColor);
-}
 
-body::-webkit-scrollbar-thumb {
-    background-color: var(--primeColor);
-    border-radius: 6px;
-    border: 3px solid var(--secondaryColor);
-}
 
 .left-item {
     justify-content: end !important;
@@ -110,4 +112,13 @@ body::-webkit-scrollbar-thumb {
 
 .width-100-percent {
     width: 100% !important;
+}
+
+.f-1-2 {
+    font-size: 1.2rem;
+}
+
+#mainContent>div:nth-child(2)>div:nth-child(2)>div>div>a {
+    color: #000;
+    font-size: 24px;
 }

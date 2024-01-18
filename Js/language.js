@@ -1,8 +1,15 @@
-let translations;
+let translation;
 
 async function loadTranslations() {
-    const response = await fetch('Translation/ar.json');
-    translations = await response.json();
+    if (getCurrentLanguage() === 'ar') {
+        const translationArabicFile = await fetch('Translation/ar.json');
+        translation = await translationArabicFile.json();
+    }
+    else {
+        const translationEnglishFile = await fetch('Translation/en.json');
+        translation = await translationEnglishFile.json();
+    }
+
 }
 
 function translatePage() {
@@ -10,19 +17,23 @@ function translatePage() {
 
     elements.forEach(element => {
         const translationKey = element.getAttribute('data-translation-key');
-        const translatedText = translations[translationKey];
+        const translatedText = translation[translationKey];
 
         if (translatedText) {
-            element.textContent = getCurrentLanguage() === 'ar' ? translatedText : translationKey;
+            element.textContent = translatedText;
+            document.documentElement.dir = getCurrentLanguage() === 'ar' ? 'rtl' : 'ltr';
+
         }
     });
 }
 
 async function toggleLanguage() {
-    await loadTranslations(); 
+    var language = document.getElementById('language');
+    document.documentElement.lang = language.value;
+    await loadTranslations();
     translatePage();
 
-    document.documentElement.lang = getCurrentLanguage() === 'ar' ? 'en' : 'ar';
+
 }
 
 function getCurrentLanguage() {

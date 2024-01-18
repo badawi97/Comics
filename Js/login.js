@@ -19,7 +19,6 @@ function navigateToDashboard() {
 }
 
 function login() {
-    debugger
 
     loginForm = document.getElementById('loginForm');
 

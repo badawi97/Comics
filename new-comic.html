@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Upload</title>
+</head>
+
+<body>
+    <h1>Upload Comic</h1>
+    <form id="comicForm" enctype="multipart/form-data">
+        <label for="imageFiles">Upload Multiple Images:</label>
+        <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*" required>
+
+        <label for="zipFile">Upload Zip File:</label>
+        <input type="file" name="zipFile" id="zipFile" accept=".zip" required>
+
+        <button type="button" onclick="uploadComic()">Upload Comic</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script src="Js/new-comic.js"></script>
+</body>
+
+</html>

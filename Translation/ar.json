@@ -14,5 +14,12 @@
     "All": "الكل",
     "Romantic": "رومانسي",
     "Comedy": "كوميدي",
-    "Other": "اخرى"
+    "Other": "اخرى",
+    "myComics": "كومكاتي",
+    "exploreComics": "استكشاف كوميات",
+    "favourite": "المفضلة",
+    "reports": "تقارير",
+    "logout": "تسجيل الخروج",
+    "addNewComic": "اضافة كوميك جديدة"
+
 }

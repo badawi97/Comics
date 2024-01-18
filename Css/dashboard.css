@@ -1,24 +1,21 @@
-.side-main {
-    position: absolute;
-    height: 66vh;
-    width: 10%;
-    left: 0;
-    top: 0;
-    width: 100%;
-    background: #1a8d9f;
-    z-index: 10;
-    display: inline-block;
-    padding: 0.5%;
+.sidebar {
+    background: var(--primeColor);
+    overflow-y: auto;
+    border: 1px solid #7b7373d9;
+    border-radius: 0.3rem;
 }
 
-.body-main {
-    height: 66vh;
-    padding: 0.5%;
-    width: 90%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    background: #f2f2f2;
-    overflow-y: auto;
+.main-content {
+    overflow-y: auto !important;
+}
+
+#sidebarItems>li>a:hover,
+:focus {
+    background: #bcbcbc6e;
+    border-radius: 0.3rem;
+}
+
+.active {
+    background: #bcbcbc6e;
+    border-radius: 0.3rem;
 }
