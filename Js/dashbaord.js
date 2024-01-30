@@ -20,6 +20,13 @@ function setSidebarHeight() {
 }
 
 function navigateSidebarItems() {
+    // Retrieve image source from localStorage
+    var imagePath = localStorage.getItem("imagePath");
+
+    // Set image source dynamically
+    if (imagePath) {
+        document.getElementById("profileImage").src = imagePath;
+    }
     const sidebarItems = document.querySelectorAll('[name^="sidebarItems"]');
     const dynamicContentContainer = document.getElementById('dynamicContentContainer');
 
@@ -60,7 +67,9 @@ function navigateSidebarItems() {
 }
 
 function logOut() {
+    localStorage.clear();
     window.location.href = "index.html";
+
 }
 
 window.addEventListener('load', setSidebarHeight);

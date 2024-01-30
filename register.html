@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
 <head>
     <meta charset="UTF-8">
@@ -25,101 +25,70 @@
 </head>
 
 <body>
-    <!-- #region navigation bar  -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- #region logo button -->
-        <a class="navbar-brand" href="index.html">
-            <img src="Images/arabic-logo-white-png.png" width="100" height="60" alt="">
-        </a>
-        <!-- #endregion logo button -->
-
-        <!-- #region menu button show to fit mobile mode --- not shown in normal screens -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- #endregion menu button show -->
-
-        </div>
-        <!-- #region left menu items buttons -->
-        <div class="collapse navbar-collapse left-item" id="navbarNav">
-            <ul class="navbar-nav">        
-                <li class="nav-item ml-2">
-                    <a id="loginBtn" data-translation-key="login" class="nav-link rounded-button white-button"
-                        href="#">Login</a>
-                </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link rounded-button white-button" data-translation-key="register"
-                        href="register.html">Register</a>
-                </li>
-                <li class="nav-item ml-2">
-                    <a href="#" onclick="toggleLanguage()" data-translation-key="language"
-                        class="nav-link rounded-button black-button">Language
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- #endregion left menu items buttons -->
-
-    </nav>
-    <!-- #endregion navigation bar  -->
-
+    <div id="headerNavContainer"></div>
 
     <div class="container-fluid" style="background: #f4f4f4;">
-        <main class="main">
+        <main class="">
             <div class="body-main">
-                <form>
+                <form id="registrationForm">
                     <div class="mx-auto half-width">
                         <div class="row">
                             <div class="col-6">
-                                <label for="">
-                                    <input placeholder="First Name" type="text">
+                                <label for="firstName">
+                                    <input id="firstName" placeholder="First Name" type="text">
                                 </label>
                             </div>
                             <div class="col-6">
-                                <label for="">
-                                    <input placeholder="Last Name" type="text">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <label for="">
-                                    <input placeholder="E-Mail" type="email">
-                                </label>
-                            </div>
-                            <div class="col-6">
-                                <label for="">
-                                    <input placeholder="Password" type="password">
+                                <label for="lastName">
+                                    <input id="lastName" placeholder="Last Name" type="text">
                                 </label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <label for="">
-                                    <input placeholder="Phone Number" type="text">
+                                <label for="email">
+                                    <input id="email" placeholder="E-Mail" type="email">
                                 </label>
                             </div>
                             <div class="col-6">
-                                <label for="">
-                                    <input placeholder="Address" type="text">
+                                <label for="password">
+                                    <input id="password" placeholder="Password" type="password">
                                 </label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <label for="">
+                                <label for="phoneNumber">
+                                    <input id="phoneNumber" placeholder="Phone Number" type="text">
+                                </label>
+                            </div>
+                            <div class="col-6">
+                                <label for="address">
+                                    <input id="address" placeholder="Address" type="text">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label style="display: flex;" for="imageInput">
                                     <input accept="image/*" type='file' id="imageInput" />
                                     <img id="imageProfile" src="Images/profile-img.png" alt="your image" style=" width: 150px;
                                         height: 150px; " />
                                 </label>
                             </div>
-
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="username">
+                                    <input type='text' placeholder="User Name" id="username" />
+                                </label>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <button class="rounded-button black-button width-100-percent mt-1"
-                                    type="submit">Register Now</button>
+                                <button onclick="submitForm()"
+                                    class="rounded-button black-button width-100-percent mt-1" type="button">Register
+                                    Now</button>
                             </div>
                         </div>
                     </div>
@@ -128,11 +97,11 @@
         </main>
 
         <!-- #region Footer-->
-        <div class="container">
+        <div class="container mt-5">
             <div class="row p-3 my-2 ">
                 <div class="col-12">
                     <div class="button-group-footer-column">
-                        <h6>Download COMICS now!</h6>
+                        <h6 data-translation-key="downloadComicsNow"></h6>
                         <div class="button-group-footer-row mt-2">
 
                             <a class="button-footer"><img width="100" src="Images/footr/Download-on-the-App-Store.png"
@@ -147,12 +116,30 @@
             <div class="row my-2">
                 <div class="col-12">
                     <div class="button-group-footer-row">
-                        <a href="about.html" class="button-footer">About</a>
-                        <a class="button-footer">FeedBack</a>
-                        <a class="button-footer">Help</a>
-                        <a class="button-footer">Terms</a>
-                        <a class="button-footer">Privacy</a>
-                        <a class="button-footer">Contact</a>
+                        <a href="https://www.instagram.com/arabi.comics/" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.instagram.com/arabi.comics/" target="_blank">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/arabi.comics/" target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/arabi.comics/" target="_blank">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <div class="button-group-footer-row">
+                        <a href="about.html" class="button-footer" data-translation-key="about"></a>
+                        <a class="button-footer" data-translation-key="feedbacks"></a>
+                        <a class="button-footer" data-translation-key="help"></a>
+                        <a class="button-footer" data-translation-key="terms"></a>
+                        <a class="button-footer" data-translation-key="privacy"></a>
+                        <a class="button-footer" data-translation-key="contactUs"></a>
                     </div>
                 </div>
             </div>
@@ -166,8 +153,8 @@
             </div>
         </div>
         <!-- #endregion Footer -->
-
     </div>
+
     <!-- #region signin popup-->
     <div id="loginPopup" class="signin-container">
         <div class="signin-contant">
@@ -178,12 +165,12 @@
             <div class="signin-header">
                 <h1>Welcome Back</h1>
                 <p>Please Enter Your Detials To Sign In</p>
-                <img src="Images/profile-img.png" alt="">
+                <img src="Images/avatars/profile-image.png" alt="">
             </div>
             <div class="signin-body">
                 <form id="loginForm">
                     <label for="username">
-                        <input id="username" placeholder="User Name" type="text">
+                        <input id="username" data-translation-key="" placeholder="User Name" type="text">
                     </label>
                     <label for="password">
                         <input id="password" placeholder="Password" type="password">
@@ -198,7 +185,8 @@
     <!-- #region scrolling to top button -->
     <button id="scrollToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
     <!-- #endregion scrolling to top button -->
-
+    
+    <script src="Js/navigation.js"></script>
     <script src="Js/login.js"></script>
     <script src="Js/scrollTopBtn.js"></script>
     <script src="Js/language.js"></script>

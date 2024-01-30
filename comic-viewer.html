@@ -27,46 +27,7 @@
 </head>
 
 <body>
-    <!-- #region navigation bar  -->
-    <nav id="headerNav" class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- #region logo button -->
-        <a class="navbar-brand" href="index.html">
-            <img src="Images/arabic-logo-white-png.png" width="100" height="60" alt="">
-        </a>
-        <!-- #endregion logo button -->
-
-        <!-- #region menu button show to fit mobile mode --- not shown in normal screens -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- #endregion menu button show -->
-
-        </div>
-        <!-- #region left menu items buttons -->
-        <div class="collapse navbar-collapse  left-item" id="navbarNav">
-            <ul class="navbar-nav align-items-center">
-                <li class="nav-item ml-2">
-                    <a id="loginBtn" data-translation-key="login" class="nav-link rounded-button white-button"
-                        href="#">Login</a>
-                </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link rounded-button white-button" data-translation-key="register"
-                        href="register.html">Register</a>
-                </li>
-                <li class="nav-item ml-2">
-                    <select onchange="toggleLanguage()" id="language" data-translation-key="Language"
-                        class="custom-select">
-                        <option value="ar">Ar</option>
-                        <option value="en">En</option>
-                    </select>
-                </li>
-            </ul>
-        </div>
-        <!-- #endregion left menu items buttons -->
-
-    </nav>
-    <!-- #endregion navigation bar  -->
+    <div id="headerNavContainer"></div>
 
     <div class="container-fluid">
 
@@ -112,6 +73,7 @@
     <!-- #endregion scrolling to top button -->
 
 
+    <script src="Js/navigation.js"></script>
     <script>
         // Function to get the value of a query parameter from the URL
         function getQueryParam(name) {

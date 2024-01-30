@@ -30,9 +30,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $conn->query($query);
 
         if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $UserName = $row['UserName'];
+            $Id = $row['Id'];
+            $ImagePath = $row['ImagePath'];
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
-            echo json_encode(['status' => 'success', 'message' => 'Login successful']);
+
+            $data = [
+                'userId' => $Id,
+                'userName' => $UserName,
+                'imagePath' => $ImagePath
+            ];
+            echo json_encode(['status' => 'success', 'message' => 'Login successful', 'data' => $data]);
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Incorrect password']);
         }

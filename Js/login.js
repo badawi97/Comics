@@ -1,11 +1,3 @@
-document.getElementById('loginBtn').addEventListener('click', function () {
-    showLoginPopup();
-});
-
-document.getElementById('closeBtn').addEventListener('click', function () {
-    hideLoginPopup();
-});
-
 function hideLoginPopup() {
     document.getElementById('loginPopup').style.display = 'none';
 }
@@ -26,7 +18,7 @@ function login() {
     var password = document.getElementById('password').value;
 
 
-    fetch('http://localhost/Comics/Comics/Php/login.php', {
+    fetch('./Php/login.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -34,9 +26,13 @@ function login() {
         body: 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password),
     })
         .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
+        .then(result => {
+            if (result.status === 'success') {
                 loginForm.reset();
+                debugger
+                localStorage.setItem('userId', result.data.userId);
+                localStorage.setItem('userName', result.data.userName);
+                localStorage.setItem('imagePath', result.data.imagePath);
                 hideLoginPopup();
                 navigateToDashboard()
             } else {

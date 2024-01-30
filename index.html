@@ -25,46 +25,7 @@
 </head>
 
 <body>
-    <!-- #region navigation bar  -->
-    <nav id="headerNav" class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- #region logo button -->
-        <a class="navbar-brand" href="index.html">
-            <img src="Images/arabic-logo-white-png.png" width="100" height="60" alt="">
-        </a>
-        <!-- #endregion logo button -->
-
-        <!-- #region menu button show to fit mobile mode --- not shown in normal screens -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- #endregion menu button show -->
-
-        </div>
-        <!-- #region left menu items buttons -->
-        <div class="collapse navbar-collapse  left-item" id="navbarNav">
-            <ul class="navbar-nav align-items-center">
-                <li class="nav-item ml-2">
-                    <a id="loginBtn" data-translation-key="login" class="nav-link rounded-button white-button"
-                        href="#">Login</a>
-                </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link rounded-button white-button" data-translation-key="register"
-                        href="register.html">Register</a>
-                </li>
-                <li class="nav-item ml-2">
-                    <select onchange="toggleLanguage()" id="language" data-translation-key="Language"
-                        class="custom-select">
-                        <option value="ar">Ar</option>
-                        <option value="en">En</option>
-                    </select>
-                </li>
-            </ul>
-        </div>
-        <!-- #endregion left menu items buttons -->
-
-    </nav>
-    <!-- #endregion navigation bar  -->
+    <div id="headerNavContainer"></div>
 
     <!-- #region main container -->
     <div class="container-fliud" style="background: #f4f4f4;">
@@ -75,7 +36,6 @@
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -85,10 +45,6 @@
                 <div class="carousel-item">
                     <img class="d-block w-100" data-interval="2000" height="500" src="Images/slider/website-icon2.png"
                         alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" data-interval="2000" height="500" src="Images/slider/website-icon-3.png"
-                        alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -103,22 +59,7 @@
         <!-- #region filter lables -->
         <div class="container-fliud">
             <form action="">
-                <div class="radio-buttons">
-                    <label for="all" data-translation-key="All" class="white-button radio-button active">
-                        <input id="all" value="0" name="comicFilterType" type="radio" class="hidden-radio">
-                        All
-                    </label>
-                    <label for="romantic" data-translation-key="Romantic" class="white-button radio-button">
-                        <input id="romantic" value="1" name="comicFilterType" type="radio" class="hidden-radio">
-                        Romantic
-                    </label>
-                    <label for="comedy" data-translation-key="Comedy" class="white-button radio-button">
-                        <input id="comedy" value="2" name="comicFilterType" type="radio" class="hidden-radio">
-                        Comedy
-                    </label>
-                    <label data-translation-key="Other" class="white-button radio-button">
-                        <input name="comicFilterType" type="radio" class="hidden-radio"> Other
-                    </label>
+                <div class="radio-buttons" id="radioButtonsContainer">
                 </div>
             </form>
         </div>
@@ -129,7 +70,7 @@
         <div class="container mt-4">
             <!-- #region comics cards -->
             <div class="row">
-                <div class="col-3">
+                <div class="col-sm-3 mb-5">
                     <div class="card">
                         <a href="comic-viewer.html?comic=storybaord1">
                             <img class="d-block w-100" height="210" src="Images/fisrt comic.jpeg" alt="First Comic">
@@ -137,9 +78,8 @@
                         <a href="comic-viewer.html?comic=storybaord1" class="overlay">
                         </a>
                     </div>
-
                 </div>
-                <div class="col-3">
+                <div class="col-sm-3 mb-5">
                     <div class="card">
                         <a href="comic-viewer.html?comic=storyboard2">
                             <img class="d-block w-100" height="210" src="Images/second comic.jpeg" alt="Second Comic">
@@ -150,10 +90,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-3 mb-5">
                     <div class="card">
                         <a href="comic-viewer.html?comic=storyboard2">
-                            <img class="d-block w-100" height="210" src="Images/avatars/female-hjab-avatart.jpeg" alt="Second Comic">
+                            <img class="d-block w-100" height="210" src="Images/avatars/female-hjab-avatart.jpeg"
+                                alt="Second Comic">
                         </a>
                         <div class="overlay">
                             <a href="comic-viewer.html?comic=storyboard2" class="icon">
@@ -161,10 +102,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-3 mb-5">
                     <div class="card">
                         <a href="comic-viewer.html?comic=storyboard2">
-                            <img class="d-block w-100" height="210" src="Images/avatars/Screenshot 2024-01-13 182612.png" alt="Second Comic">
+                            <img class="d-block w-100" height="210"
+                                src="Images/avatars/Screenshot 2024-01-13 182612.png" alt="Second Comic">
                         </a>
                         <div class="overlay">
                             <a href="comic-viewer.html?comic=storyboard2" class="icon">
@@ -172,10 +114,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-3 mb-5">
                     <div class="card">
                         <a href="comic-viewer.html?comic=storyboard2">
-                            <img class="d-block w-100" height="210" src="Images/avatars/WhatsApp Image 2024-01-13 at 7.36.32 PM.jpeg" alt="Second Comic">
+                            <img class="d-block w-100" height="210"
+                                src="Images/avatars/WhatsApp Image 2024-01-13 at 7.36.32 PM.jpeg" alt="Second Comic">
                         </a>
                         <div class="overlay">
                             <a href="comic-viewer.html?comic=storyboard2" class="icon">
@@ -183,10 +126,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-3 mb-5">
                     <div class="card">
                         <a href="comic-viewer.html?comic=storyboard2">
-                            <img class="d-block w-100" height="210" src="Images/avatars/WhatsApp Image 2024-01-13 at 7.36.32 PM (1).jpeg" alt="Second Comic">
+                            <img class="d-block w-100" height="210"
+                                src="Images/avatars/WhatsApp Image 2024-01-13 at 7.36.32 PM (1).jpeg"
+                                alt="Second Comic">
                         </a>
                         <div class="overlay">
                             <a href="comic-viewer.html?comic=storyboard2" class="icon">
@@ -194,10 +139,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-3 mb-5">
                     <div class="card">
                         <a href="comic-viewer.html?comic=storyboard2">
-                            <img class="d-block w-100" height="210" src="Images/avatars/Screenshot 2024-01-13 182825.png" alt="Second Comic">
+                            <img class="d-block w-100" height="210"
+                                src="Images/avatars/Screenshot 2024-01-13 182825.png" alt="Second Comic">
                         </a>
                         <div class="overlay">
                             <a href="comic-viewer.html?comic=storyboard2" class="icon">
@@ -205,10 +151,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-3 mb-5">
                     <div class="card">
                         <a href="comic-viewer.html?comic=storyboard2">
-                            <img class="d-block w-100" height="210" src="Images/avatars/Screenshot 2024-01-13 183048.png" alt="Second Comic">
+                            <img class="d-block w-100" height="210"
+                                src="Images/avatars/Screenshot 2024-01-13 183048.png" alt="Second Comic">
                         </a>
                         <div class="overlay">
                             <a href="comic-viewer.html?comic=storyboard2" class="icon">
@@ -220,26 +167,18 @@
             <!-- #endregion comics cards -->
         </div>
         <!-- #endregion cards container -->
-
-        <div class="container">
-        </div>
-        <div class="container">
-
-        </div>
-
-         <!-- #region Footer-->
-         <div class="container mt-5">
+    
+        <!-- #region Footer-->
+        <div class="container mt-5">
             <div class="row p-3 my-2 ">
                 <div class="col-12">
                     <div class="button-group-footer-column">
                         <h6 data-translation-key="downloadComicsNow"></h6>
                         <div class="button-group-footer-row mt-2">
 
-                            <a class="button-footer"><img width="100"
-                                    src="Images/footr/Download-on-the-App-Store.png"
+                            <a class="button-footer"><img width="100" src="Images/footr/Download-on-the-App-Store.png"
                                     alt="Download-on-the-App-Store"></a>
-                            <a class="button-footer"><img width="100"
-                                    src="Images/footr/GET-IT-on-Google-Play.png"
+                            <a class="button-footer"><img width="100" src="Images/footr/GET-IT-on-Google-Play.png"
                                     alt="GET-IT-on-Google-Play"></a>
                         </div>
                     </div>
@@ -285,39 +224,11 @@
                 </div>
             </div>
         </div>
-        <!-- #endregion Footer -->      
-  
-
+        <!-- #endregion Footer -->
     </div>
     <!-- #endregion main container -->
 
-    <!-- #region signin popup-->
-    <div id="loginPopup" class="signin-container">
-        <div class="signin-contant">
-            <div id="closeBtn" class="top-right" onclick="CloseSigninPopup()">
-                <i class="fa fa-window-close"></i>
-            </div>
-
-            <div class="signin-header">
-                <h1>Welcome Back</h1>
-                <p>Please Enter Your Detials To Sign In</p>
-                <img src="Images/avatars/profile-image.png" alt="">
-            </div>
-            <div class="signin-body">
-                <form id="loginForm">
-                    <label for="username">
-                        <input id="username" data-translation-key="" placeholder="User Name" type="text">
-                    </label>
-                    <label for="password">
-                        <input id="password" placeholder="Password" type="password">
-                    </label>
-                    <button class="rounded-button white-button" type="button" onclick="login()">Login</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- #endregion signin popup-->
-
+ 
     <!-- #region scrolling to top button -->
     <button id="scrollToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
     <!-- #endregion scrolling to top button -->
@@ -338,6 +249,8 @@
             });
         });
     </script>
+    <script src="Js/comic-type.js"></script>
+    <script src="Js/navigation.js"></script>
     <script src="Js/login.js"></script>
     <script src="Js/scrollTopBtn.js"></script>
     <script src="Js/language.js"></script>
