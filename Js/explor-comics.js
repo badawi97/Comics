@@ -72,11 +72,10 @@ function populateRadioButtons(comicTypes) {
     radioButtons.forEach(async function (radioButton) {
         radioButton.addEventListener("change", await filterComics);
     });
-}
+}   
 
 // Function to filter comics based on selected type
 async function filterComics() {
-    debugger
     const searchInput = document.getElementById('searchInput').value;
 
     const radioButtons = document.querySelectorAll('.radio-button');
