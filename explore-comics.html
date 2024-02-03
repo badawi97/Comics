@@ -1,107 +1,16 @@
-<div id="searchResults"></div>
-<div class="container mt-4">
-    <div>
-        <h2>Explore Comics</h2>
-    </div>
-    <label for="searchInput">Search:</label>
-    <input  type="text" id="searchInput" placeholder="Enter comic title">
+<div class="container-fliud">
+    <h2>Explore Comics</h2>
 
-    <button class="black-button rounded-button pointer" onclick="searchComics()">Search</button>
-    <!-- #region comics cards -->
-    <div class="row mt-4">
-        <div class="col-3">
-            <div class="card">
-                <a href="comic-viewer.html?comic=storybaord1">
-                    <img class="d-block w-100" height="210" src="Images/fisrt comic.jpeg" alt="First Comic">
-                </a>
-                <a href="comic-viewer.html?comic=storybaord1" class="overlay">
-                </a>
-            </div>
-
+    <form>
+        <div class="radio-buttons" id="radioButtonsContainer">
+            <!-- Radio buttons for filtering -->
         </div>
-        <div class="col-3">
-            <div class="card">
-                <a href="comic-viewer.html?comic=storyboard2">
-                    <img class="d-block w-100" height="210" src="Images/second comic.jpeg" alt="Second Comic">
-                </a>
-                <div class="overlay">
-                    <a href="comic-viewer.html?comic=storyboard2" class="icon">
-                    </a>
-                </div>
-            </div>
+        <div class="container mt-4">
+            <input type="text" id="searchInput" placeholder="Enter comic title">
+            <button class="black-button rounded-button pointer" onclick="searchComics()">Search</button>
+            <div id="comicsContainer"></div>
+            <!-- Comics cards will be dynamically added here -->
         </div>
-        <div class="col-3">
-            <div class="card">
-                <a href="comic-viewer.html?comic=storyboard2">
-                    <img class="d-block w-100" height="210" src="Images/avatars/female-hjab-avatart.jpeg"
-                        alt="Second Comic">
-                </a>
-                <div class="overlay">
-                    <a href="comic-viewer.html?comic=storyboard2" class="icon">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card">
-                <a href="comic-viewer.html?comic=storyboard2">
-                    <img class="d-block w-100" height="210" src="Images/avatars/Screenshot 2024-01-13 182612.png"
-                        alt="Second Comic">
-                </a>
-                <div class="overlay">
-                    <a href="comic-viewer.html?comic=storyboard2" class="icon">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card">
-                <a href="comic-viewer.html?comic=storyboard2">
-                    <img class="d-block w-100" height="210"
-                        src="Images/avatars/WhatsApp Image 2024-01-13 at 7.36.32 PM.jpeg" alt="Second Comic">
-                </a>
-                <div class="overlay">
-                    <a href="comic-viewer.html?comic=storyboard2" class="icon">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card">
-                <a href="comic-viewer.html?comic=storyboard2">
-                    <img class="d-block w-100" height="210"
-                        src="Images/avatars/WhatsApp Image 2024-01-13 at 7.36.32 PM (1).jpeg" alt="Second Comic">
-                </a>
-                <div class="overlay">
-                    <a href="comic-viewer.html?comic=storyboard2" class="icon">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card">
-                <a href="comic-viewer.html?comic=storyboard2">
-                    <img class="d-block w-100" height="210" src="Images/avatars/Screenshot 2024-01-13 182825.png"
-                        alt="Second Comic">
-                </a>
-                <div class="overlay">
-                    <a href="comic-viewer.html?comic=storyboard2" class="icon">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card">
-                <a href="comic-viewer.html?comic=storyboard2">
-                    <img class="d-block w-100" height="210" src="Images/avatars/Screenshot 2024-01-13 183048.png"
-                        alt="Second Comic">
-                </a>
-                <div class="overlay">
-                    <a href="comic-viewer.html?comic=storyboard2" class="icon">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- #endregion comics cards -->
+        <!-- #endregion cards container -->
+    </form>
 </div>

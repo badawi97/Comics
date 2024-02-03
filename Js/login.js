@@ -29,7 +29,6 @@ function login() {
         .then(result => {
             if (result.status === 'success') {
                 loginForm.reset();
-                debugger
                 localStorage.setItem('userId', result.data.userId);
                 localStorage.setItem('userName', result.data.userName);
                 localStorage.setItem('imagePath', result.data.imagePath);

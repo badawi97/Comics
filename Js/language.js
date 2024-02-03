@@ -21,10 +21,20 @@ function translatePage() {
 
         if (translatedText) {
             element.textContent = translatedText;
-            document.documentElement.dir = getCurrentLanguage() === 'ar' ? 'rtl' : 'ltr';
-
         }
     });
+
+    const placeholders = document.querySelectorAll('[placeholder]');
+    placeholders.forEach(placeholder => {
+        const placeholderText = placeholder.getAttribute('placeholder');
+        const translatedText = translation[placeholderText];
+
+        if (translatedText) {
+            placeholder.setAttribute('placeholder', translatedText);
+        }
+    });
+    document.documentElement.dir = getCurrentLanguage() === 'ar' ? 'rtl' : 'ltr';
+
 }
 
 async function toggleLanguage() {

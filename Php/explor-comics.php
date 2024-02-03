@@ -19,10 +19,20 @@ if ($conn->connect_error) {
 }
 
 // Get the search query from the URL parameter
-$searchQuery = $_GET['q'];
 
-// Perform a simple search in the 'comic' table based on the title
-$sql = "SELECT * FROM comic WHERE Title LIKE '%$searchQuery%'";
+$comicType = $_GET['type'];
+$comicTypeInt = (int)$comicType;
+
+
+// Build SQL query
+$sql = "";
+if ($comicTypeInt === 11) {
+    // If comicTypeInt is 11, get all records
+    $sql = "SELECT * FROM comic";
+} else {
+    // Otherwise, filter records based on TypeId
+    $sql = "SELECT * FROM comic WHERE TypeId = $comicTypeInt";
+}
 $result = $conn->query($sql);
 $searchResults = [];
 
@@ -30,8 +40,12 @@ if ($result->num_rows > 0) {
     // Fetch results and store them in an array
     while ($row = $result->fetch_assoc()) {
         $searchResults[] = [
+            'Id' => $row['Id'],
             'Title' => $row['Title'],
             'PublishedBy' => $row['PublishedBy'],
+            'Discerption' => $row['Discerption'],
+            'PublishedOn' => $row['PublishedOn'],
+            'TypeId' => $row['TypeId']
         ];
     }
 }

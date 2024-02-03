@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comic Upload</title>
+    <title>Create new Comic</title>
     <link rel="icon" href="Images/arabic-logo-white-png.png" type="image/x-icon">
 
     <link rel="stylesheet" href="Css/main.css">
@@ -29,20 +29,34 @@
     <div id="headerNavContainer"></div>
 
     <div class="container-fluid" style="height: 100vh; background: #f4f4f4;">
-        <h1>Upload Comic</h1>
-        <form id="comicForm" enctype="multipart/form-data">
-            <label for="imageFiles">Upload Multiple Images:</label>
-            <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*" required>
+        <div class="container">
 
-            <label for="zipFile">Upload Zip File:</label>
-            <input type="file" name="zipFile" id="zipFile" accept=".zip" required>
+            <h1 data-translation-key="createNewComic"></h1>
+            <form id="comicForm" enctype="multipart/form-data">
 
-            <button type="button" onclick="uploadComic()">Upload Comic</button>
-        </form>
+                <div class="row">
+                    <div class="col-12">
 
-        <div id="output"></div>
+                        <label for="imageFiles">Upload Multiple Images:</label>
+                        <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*" required>
+                        <input type="text" id="title" placeholder="Title"><br>
+                        <textarea id="description" placeholder="description"></textarea><br>
+                        <select id="comicsTypes">
+                            <option value="0" hidden data-translation-key="selectOne"></option>
+                        </select>
+                        <button type="submit" onclick="saveComic()">Submit</button>
+                    </div>
+                </div>
 
-        
+
+            </form>
+
+
+
+            <div id="output"></div>
+
+        </div>
+
         <!-- #region Footer-->
         <div class="container mt-5">
             <div class="row p-3 my-2 ">
@@ -105,11 +119,12 @@
     <!-- #region scrolling to top button -->
     <button id="scrollToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
     <!-- #endregion scrolling to top button -->
-    
+
     <script src="Js/navigation.js"></script>
     <script src="Js/new-comic.js"></script>
     <script src="Js/scrollTopBtn.js"></script>
     <script src="Js/language.js"></script>
+
 </body>
 
 </html>

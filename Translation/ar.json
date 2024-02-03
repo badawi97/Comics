@@ -20,6 +20,14 @@
     "favourite": "المفضلة",
     "reports": "تقارير",
     "logout": "تسجيل الخروج",
-    "addNewComic": "اضافة كوميك جديدة"
-
+    "addNewComic": "اضافة كوميك جديدة",
+    "userName": "اسم المستخدم",
+    "address": "الموقع",
+    "phoneNumber": "الهاتف",
+    "password": "رمز المرور",
+    "email": "الايميل",
+    "firstName": "الاسم الاول",
+    "lastName": "الاسم الاخير",
+    "selectOne":"اختر",
+    "createNewComic":"انشاء قصة مصورة جديدة"
 }

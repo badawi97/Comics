@@ -1,32 +1,4 @@
-.radio-buttons {
-    display: flex;
-    width: 100%;
-    justify-items: flex-start;
-    justify-content: space-around;
-    align-items: center;
-    background: #fff;
-    border-bottom: 1px solid #eaeaea;
-    border-top: 1px solid #eaeaea;
 
-}
-
-.radio-button {
-    padding: 1.3rem;
-    cursor: pointer;
-    margin: 0 !important;
-    font-weight: bold;
-}
-
-.hidden-radio {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.white-button.radio-button.active {
-    background-color: var(--primeColor) !important;
-    color: #fff !important;
-}
 
 .overlay {
     position: absolute;

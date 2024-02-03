@@ -25,10 +25,27 @@ $password = $_POST['password'];
 $phoneNumber = $_POST['phoneNumber'];
 $address = $_POST['address'];
 $username = $_POST['username'];
+$imagePath = '';
 
-// Perform the database insert
-$sql = "INSERT INTO `user`(`UserName`, `Email`, `Password`, `FirstName`, `LastName`, `PhoneNumber`, `Address`)
-        VALUES ('$username','$email','$password', '$firstName', '$lastName',  '$phoneNumber', '$address')";
+if (!empty($_FILES['image']['name'][0])) {
+    $imageFiles = $_FILES['image'];
+
+    foreach ($imageFiles['name'] as $key => $name) {
+        $tempFile = $imageFiles['tmp_name'][$key];
+        $targetFile = '../Images/Users/' . $name;
+        $imagePath = 'Images/Users/' . $name;
+        if (move_uploaded_file($tempFile, $targetFile)) {
+            $output .= "Image '$name' uploaded successfully.<br>";
+        } else {
+            $output .= "Failed to upload image '$name'.<br>";
+        }
+    }
+}
+
+
+
+$sql = "INSERT INTO `user`(`UserName`, `Email`, `Password`, `FirstName`, `LastName`, `PhoneNumber`, `Address`, `ImagePath`)
+        VALUES ('$username','$email','$password', '$firstName', '$lastName',  '$phoneNumber', '$address', '$imagePath')";
 
 
 if ($conn->query($sql) === TRUE) {
