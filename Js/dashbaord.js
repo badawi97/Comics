@@ -28,7 +28,6 @@ function navigateSidebarItems() {
         document.getElementById("profileImage").src = imagePath;
     }
     const sidebarItems = document.querySelectorAll('[name^="sidebarItems"]');
-    const dynamicContentContainer = document.getElementById('dynamicContentContainer');
 
     const loadDefaultPage = async () => {
         const defaultTranslationKey = 'explore-comics';
@@ -45,22 +44,11 @@ function navigateSidebarItems() {
     sidebarItems.forEach(item => {
         item.addEventListener('click', async (event) => {
             const translationKey = event.target.getAttribute('role');
-
-            const response = await fetch(`${translationKey}.html`);
-
-            if (response.ok) {
-                dynamicContentContainer.innerHTML = await response.text();
-
-                sidebarItems.forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                });
-                item.classList.add('active');
-                if (translationKey == 'reports') {
-                    loadComicsReport();
-                }
-            } else {
-                console.error(`Failed to fetch content for ${translationKey}`);
-            }
+            await loadDynamicContentContainer(translationKey);
+            sidebarItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            item.classList.add('active');
         });
     });
 
@@ -71,6 +59,24 @@ function logOut() {
     localStorage.clear();
     window.location.href = "index.html";
 
+}
+
+async function loadDynamicContentContainer(translationKey) {
+    const dynamicContentContainer = document.getElementById('dynamicContentContainer');
+    const htmlPage = await fetch(`${translationKey}.html`);
+    const jsFile = await fetch(`./Js/${translationKey}.js`);
+
+    var ksFileContent = await jsFile.text();
+    eval(ksFileContent)
+
+
+    if (htmlPage.ok) {
+        dynamicContentContainer.innerHTML = await htmlPage.text();
+
+
+    } else {
+        console.error(`Failed to fetch content for ${translationKey}`);
+    }
 }
 
 window.addEventListener('load', setSidebarHeight);

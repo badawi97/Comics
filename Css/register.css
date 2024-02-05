@@ -58,6 +58,6 @@
 
 .body-main textarea::placeholder {
     opacity: 0.5;
-    color: 2d2828bd;
+    color: #2d2828bd;
     font-family: Monospace;
 }

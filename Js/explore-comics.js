@@ -15,7 +15,7 @@ function displayComics(comics) {
     comicsContainer.innerHTML = "";
     comics.forEach(function (comic) {
         var comicCard = document.createElement("div");
-        comicCard.className = "col-sm-3 mb-5";
+        comicCard.className = "col-lg-3 mb-5";
         comicCard.innerHTML = `
             <div class="card">
                 <span class="card-title">${comic.title}</span>
@@ -45,7 +45,7 @@ function populateRadioButtons(comicTypes) {
         label.classList.add("white-button", "radio-button");
         label.setAttribute("for", comicType.name);
         label.innerHTML = `
-        <input onchange="filterComics()" type="radio" id="${comicType.name}"  name="comicFilterType" class="hidden-radio" value="${comicType.id}">
+        <input onchange="await filterComics()" type="radio" id="${comicType.name}"  name="comicFilterType" class="hidden-radio" value="${comicType.id}">
         `
         var textNode = document.createTextNode(comicType.name);
         label.appendChild(textNode);
@@ -66,10 +66,10 @@ async function filterComics() {
     displayComics(result);
 }
 
-function setDefualtFilterType() {
+async function setDefualtFilterType() {
     const filterType = document.getElementById('All');
     filterType.checked = true;
-    filterComics();
+    await filterComics();
 }
 
 fetchComicTypes();

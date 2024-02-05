@@ -6,8 +6,13 @@
             <!-- Radio buttons for filtering -->
         </div>
         <div class="container mt-4">
-            <input type="text" id="searchInput" placeholder="Enter comic title">
-            <button class="black-button rounded-button pointer" onclick="searchComics()">Search</button>
+            <div class="body-main">
+                <label for="searchInput">
+                    <input type="text" id="searchInput" placeholder="Enter comic title">
+                </label>
+                <button class="black-button rounded-button pointer" onclick="searchComics()">Search</button>
+
+            </div>
             <div id="comicsContainer" class="row"></div>
             <!-- Comics cards will be dynamically added here -->
         </div>

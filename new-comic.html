@@ -1,27 +1,23 @@
-<div class="container">
-
-    <h1 data-translation-key="createNewComic"></h1>
-    <form id="comicForm" enctype="multipart/form-data">
-
-        <div class="row">
-            <div class="col-12">
-
-                <label for="imageFiles">Upload Multiple Images:</label>
+<h1 data-translation-key="createNewComic"></h1>
+<form id="comicForm" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-12 body-main">
+            <label for="imageFiles">
                 <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*" required>
-                <input type="text" id="title" placeholder="Title"><br>
-                <textarea id="description" placeholder="description"></textarea><br>
+            </label>
+            <label for="">
+                <input type="text" id="title" placeholder="Title">
+            </label>
+            <label for="">
+                <textarea id="description" placeholder="description"></textarea>
+            </label>
+            <label for="">
                 <select id="comicsTypes">
                     <option value="0" hidden data-translation-key="selectOne"></option>
                 </select>
-                <button type="submit" onclick="saveComic()">Submit</button>
-            </div>
+            </label>
+            <button type="submit" onclick="saveComic()">Submit</button>
         </div>
-
-
-    </form>
-
-
-
-    <div id="output"></div>
-
-</div>
+    </div>
+</form>
+<div id="output"></div>

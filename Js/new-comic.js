@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-    getComicsTypes();
-});
+getComicsTypes();
+
 
 function uploadComic() {
     var formData = new FormData(document.getElementById("comicForm"));
@@ -47,10 +46,10 @@ function saveComic() {
     });
 }
 
-function getComicsTypes() {
+async function getComicsTypes() {
     // Fetch comic types from PHP using AJAX
-    var response = fetch('./Php/comic-type.php')
-    var comicTypes = response.json();
+    var response = await fetch('./Php/comic-type.php')
+    var comicTypes =await response.json();
     // Populate select element with comic types
     var selectElement = document.getElementById('comicsTypes');
     comicTypes.forEach(comicType => {
