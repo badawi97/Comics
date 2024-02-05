@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
             'email' => $row['Email'],
             'address' => $row['Address'],
             'phone' => $row['PhoneNumber'],
-            'pass' => $row['Password']
+            'password' => $row['Password']
         ];
     }
 }

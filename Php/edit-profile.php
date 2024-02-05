@@ -16,32 +16,38 @@ if ($conn->connect_error) {
 
 // Check if user ID is provided
 if (!isset($_POST['id'])) {
-    die("User ID not provided");
+    $response = array('success' => false, 'message' => 'User ID not provided');
+    echo json_encode($response);
+    exit;
 }
 
 $id = (int)$_POST['id']; // Sanitize user ID
-
-// Prepare and bind parameters
-$query = "UPDATE `user` SET `FirstName`=?, `LastName`=?, `UserName`=?, `Email`=?, `PhoneNumber`=?, `Address`=?, `Password`=? WHERE Id=?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("ssssissi", $firstName, $lastName, $username, $email, $phone, $address, $password, $id);
 
 // Assign values from POST data
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $email = $_POST['email'];
-$password = $_POST['password'];
 $phone = $_POST['phone'];
 $address = $_POST['address'];
-$username = $_POST['username'];
+$userName = $_POST['username']; 
+$password = $_POST['password']; 
 
-// Execute query
-if ($stmt->execute()) {
-    echo json_encode(array("message" => "User updated successfully"));
+// Prepare and bind parameters
+if (!empty($password)) {
+    $stmt = $conn->prepare("UPDATE `user` SET `FirstName`=?, `LastName`=?, `UserName`=?, `Email`=?, `PhoneNumber`=?, `Address`=?, `Password`=? WHERE Id=?");
+    $stmt->bind_param("sssssssi", $firstName, $lastName, $userName, $email, $phone, $address, $password, $id);
 } else {
-    echo json_encode(array("message" => "Error updating user"));
+    $stmt = $conn->prepare("UPDATE `user` SET `Password`=? WHERE Id=?");
+    $stmt->bind_param("ssssssi", $password, $id);
+}
+
+if ($stmt->execute()) {
+    $response = array('success' => true, 'message' => 'User updated successfully');
+    echo json_encode($response);
+} else {
+    $response = array('success' => false, 'message' => 'Error updating user');
+    echo json_encode($response);
 }
 
 $stmt->close();
 $conn->close();
-?>
