@@ -36,7 +36,8 @@ function navigateSidebarItems() {
 
         if (defaultItem) {
             defaultItem.click();
-        } else {
+        }
+        else {
             console.error(`Default item with translation key ${defaultTranslationKey} not found.`);
         }
     };

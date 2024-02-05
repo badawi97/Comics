@@ -40,12 +40,12 @@ if ($result->num_rows > 0) {
     // Fetch results and store them in an array
     while ($row = $result->fetch_assoc()) {
         $searchResults[] = [
-            'Id' => $row['Id'],
-            'Title' => $row['Title'],
-            'PublishedBy' => $row['PublishedBy'],
-            'Discerption' => $row['Discerption'],
-            'PublishedOn' => $row['PublishedOn'],
-            'TypeId' => $row['TypeId']
+            'id' => $row['Id'],
+            'title' => $row['Title'],
+            'publishedBy' => $row['PublishedBy'],
+            'description' => $row['Description'],
+            'publishedOn' => $row['PublishedOn'],
+            'typeId' => $row['TypeId']
         ];
     }
 }

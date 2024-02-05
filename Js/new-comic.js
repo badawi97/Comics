@@ -23,12 +23,7 @@ function saveComic() {
     var title = document.getElementById("title").value;
     var description = document.getElementById("description").value;
     var comicType = document.getElementById("comicsTypes").value;
-
-
-
     var formData = new FormData();
-
-
     // Append form data
     formData.append('title', title);
     formData.append('description', description);
@@ -54,20 +49,17 @@ function saveComic() {
 
 function getComicsTypes() {
     // Fetch comic types from PHP using AJAX
-    fetch('./Php/comic-type.php')
-        .then(response => response.json())
-        .then(comicTypes => {
-            // Populate select element with comic types
-            var selectElement = document.getElementById('comicsTypes');
-            comicTypes.forEach(comicType => {
-                var option = document.createElement('option');
-                option.value = comicType.id;
-                option.textContent = comicType.name;
-                option.setAttribute('data-translation-key', comicType.name);
-                selectElement.appendChild(option);
-            });
-        })
-        .catch(error => console.error('Error:', error));
+    var response = fetch('./Php/comic-type.php')
+    var comicTypes = response.json();
+    // Populate select element with comic types
+    var selectElement = document.getElementById('comicsTypes');
+    comicTypes.forEach(comicType => {
+        var option = document.createElement('option');
+        option.value = comicType.id;
+        option.textContent = comicType.name;
+        option.setAttribute('data-translation-key', comicType.name);
+        selectElement.appendChild(option);
+    });
 }
 
 

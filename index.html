@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="Css/index.css">
     <link rel="stylesheet" href="Css/login.css">
 
-
     <!-- #region font-awesome icon-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -21,9 +20,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- #endregion bootstrap cdn  -->
-
 </head>
-
 <body>
     <div id="headerNavContainer"></div>
     <!-- #region main container -->
@@ -61,11 +58,10 @@
                 <div class="radio-buttons" id="radioButtonsContainer">
                     <!-- Radio buttons for filtering -->
                 </div>
-
-
                 <div class="container mt-4">
-                    <input type="text" id="searchInput" placeholder="Search by Comic Title">
-                    <div id="comicsContainer"></div>
+                    <input type="text" id="searchInput" placeholder="Enter comic title">
+                    <button class="black-button rounded-button pointer" onclick="searchComics()">Search</button>
+                    <div id="comicsContainer" class="row"></div>
                     <!-- Comics cards will be dynamically added here -->
                 </div>
                 <!-- #endregion cards container -->
