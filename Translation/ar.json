@@ -29,5 +29,7 @@
     "firstName": "الاسم الاول",
     "lastName": "الاسم الاخير",
     "selectOne":"اختر",
-    "createNewComic":"انشاء قصة مصورة جديدة"
+    "createNewComic":"انشاء قصة مصورة جديدة",
+    "profile":"الملف الشخصي"
+
 }
