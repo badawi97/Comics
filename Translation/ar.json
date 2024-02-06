@@ -28,8 +28,9 @@
     "email": "الايميل",
     "firstName": "الاسم الاول",
     "lastName": "الاسم الاخير",
-    "selectOne":"اختر",
-    "createNewComic":"انشاء قصة مصورة جديدة",
-    "profile":"الملف الشخصي"
-
+    "selectOne": "اختر",
+    "createNewComic": "انشاء قصة مصورة جديدة",
+    "profile": "الملف الشخصي",
+    "enterComicTitle": "ادخل عنوان القصة",
+    "search": "ابحث"
 }

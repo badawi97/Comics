@@ -22,7 +22,9 @@ function displayComics(comics) {
                 <a href="comic-viewer.html?comic=${comic.id}">
                     <img class="d-block w-100" height="210" src="${comic.coverImagePath}" alt="${comic.title}">
                 </a>
-                <a href="comic-viewer.html?comic=${comic.id}" class="overlay"></a>
+                <a href="comic-viewer.html?comic=${comic.id}" class="overlay">
+                <span class="card-description">${comic.description}</span>
+                </a>
             </div>
         `;
         comicsContainer.appendChild(comicCard);

@@ -41,5 +41,7 @@
     "createNewComic": "Create New Comic",
     "THRILLER": "Thriller",
     "SUPERNATURAL": "Supernatural",
-    "profile":"Profile"
+    "profile": "Profile",
+    "enterComicTitle": "Enter Comic Title",
+    "search": "Search"
 }

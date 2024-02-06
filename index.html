@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="Css/main.css">
     <link rel="stylesheet" href="Css/index.css">
     <link rel="stylesheet" href="Css/login.css">
+    <link rel="stylesheet" href="Css/register.css">
 
     <!-- #region font-awesome icon-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -21,6 +22,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- #endregion bootstrap cdn  -->
 </head>
+
 <body>
     <div id="headerNavContainer"></div>
     <!-- #region main container -->
@@ -58,11 +60,115 @@
                 <div class="radio-buttons" id="radioButtonsContainer">
                     <!-- Radio buttons for filtering -->
                 </div>
-                <div class="container mt-4">
-                    <input type="text" id="searchInput" placeholder="Enter comic title">
-                    <button class="black-button rounded-button pointer" onclick="searchComics()">Search</button>
+                <div class="container white-background mt-4">
+                    <div class="body-main flex-container p-3">
+                        <label class="w-50" style="margin: 0; margin-left: 1%;" for="searchInput">
+                            <input type="text" id="searchInput" placeholder="enterComicTitle">
+                        </label>
+                        <button class="black-button rounded-button pointer" data-translation-key="search"
+                            onclick="searchComics()"></button>
+
+                    </div>
                     <div id="comicsContainer" class="row"></div>
                     <!-- Comics cards will be dynamically added here -->
+                </div>
+                <div class="container white-background mt-4">
+                    comics counter
+                    <h1>User Counter</h1>
+                    <p>Total Users: <span id="userCount"></span></p>
+                </div>
+                <div class="container white-background mt-4">
+                    <div class="row mt-4">
+                        <div class="section-title">
+                            <h1>About Me</h1>
+                        </div>
+                        <div class="center about-cantainer">
+                            <div class="col-4">
+                                <div class="about-img">
+                                    <img src="Images/avatars/profile-image.png" alt="Raghda">
+                                    <div class="about-icons">
+                                        <a href="https://www.instagram.com/raghda.arts/" target="_blank">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/raghda.arts/"
+                                            target="_blank">
+                                            <i class="fa-brands fa-facebook-f"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/raghda.arts/" target="_blank">
+                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/raghda.arts/" target="_blank">
+                                            <i class="fa-brands fa-twitter"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="about-title">
+                                    <h1>Raghda</h1>
+                                </div>
+                                <div class="about-body">
+                                    <p>computer science student at Hashemite University</p>
+                                    <p>studied </p>
+                                    <p>worked</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container white-background mt-4">
+                    <div class="row mt-4 mb-2">
+                        <div class="section-title">
+                            <h1>Contact Me</h1>
+                        </div>
+                        <div class="center contact-cantainer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="contact-icons">
+                                        <span class="icon-item">
+                                            <i class="fa fa-map-marker"></i>
+                                            <h5>Address</h5>
+                                            <p>Amman-Jordan</p>
+                                        </span class="icon-item">
+                                        <span class="icon-item">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <h5>Phone</h5>
+                                            <p>0790946724</p>
+                                        </span>
+                                        <span class="icon-item">
+                                            <i class="fa fa-envelope"></i>
+                                            <h5>E-Mail</h5>
+                                            <p>Raghda@gmial.com</p>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="contact-title">
+                                        <h1>Send Me Message</h1>
+                                        <p>
+                                            If you have any work for me . you can send me message from here .
+                                            It's my pleasure to help you.
+                                        </p>
+                                    </div>
+                                    <div class="contact-body mt-2">
+                                        <form action="">
+                                            <label for="name">
+                                                <input placeholder="Enter Your Name" id="name" type="text">
+                                            </label>
+                                            <label for="email">
+                                                <input placeholder="Enter Your Email" id="email" type="text">
+                                            </label>
+                                            <label class="message" for="message">
+                                                <textarea placeholder="Enter Your Message" id="message"
+                                                    type="text"></textarea>
+                                            </label>
+                                            <button class="mt-1" type="submit">Send Now</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- #endregion cards container -->
             </form>
@@ -131,7 +237,7 @@
     <!-- #region scrolling to top button -->
     <button id="scrollToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
     <!-- #endregion scrolling to top button -->
-    <script src="Js/explor-comics.js"></script>
+    <script src="Js/index.js"></script>
     <script src="Js/navigation.js"></script>
     <script src="Js/login.js"></script>
     <script src="Js/scrollTopBtn.js"></script>

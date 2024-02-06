@@ -4,13 +4,13 @@
     <div class="radio-buttons" id="radioButtonsContainer">
         <!-- Radio buttons for filtering -->
     </div>
-    <div class="container mt-4">
-        <div class="body-main flex-container">
-            <label style="margin-left: 1%;" for="searchInput">
-                <input type="text" id="searchInput" placeholder="Enter comic title">
+    <div class="container-fluid white-background mt-4">
+        <div class="body-main flex-container p-3">
+            <label class="w-50" style="margin: 0; margin-left: 1%;" for="searchInput">
+                <input type="text" id="searchInput" placeholder="enterComicTitle">
             </label>
-            <button class="black-button rounded-button pointer" onclick="searchComics()">Search</button>
-
+            <button class="black-button rounded-button pointer" data-translation-key="search"
+                onclick="searchComics()"></button>
         </div>
         <div id="comicsContainer" class="row"></div>
         <!-- Comics cards will be dynamically added here -->

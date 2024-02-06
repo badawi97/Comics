@@ -161,6 +161,17 @@ body {
     z-index: 2;
     background: #fff;
     padding: 5px;
+    opacity: 0.8;
+}
+
+.card-description {
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    color: #fff;
+    right: 0;
+    z-index: 2;
+    padding: 5px;
 }
 
 .add-favourite-btn {
@@ -179,4 +190,10 @@ body {
 .flex-container {
     display: flex;
     align-items: center;
+}
+
+.white-background {
+    color: var(--secondaryColor) !important;
+    background: #fff !important;
+    border-radius: 5px;
 }

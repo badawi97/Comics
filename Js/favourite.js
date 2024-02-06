@@ -20,9 +20,9 @@ function displayComics(comics) {
                 <span class="card-title">${comic.title}</span>
                 <i onclick="addToFavorite(${comic.id})" class="fa fa-heart add-favourite-btn" aria-hidden="true"></i>
                 <a href="comic-viewer.html?comic=${comic.id}">
-                    <img class="d-block w-100" height="210" src="Images/Comics/Screenshot 2024-01-13 182825.png" alt="${comic.title}">
+                    <img class="d-block w-100" height="210" src="${comic.coverImagePath}" alt="${comic.title}">
                 </a>
-                <a href="comic-viewer.html?comic=${comic.id}" class="overlay">${comic.description}</a>
+                <a href="comic-viewer.html?comic=${comic.id}" class="overlay"></a>
             </div>
         `;
         comicsContainer.appendChild(comicCard);

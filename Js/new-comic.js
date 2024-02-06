@@ -62,7 +62,7 @@ async function getComicsTypes() {
         selectElement.appendChild(option);
     });
 
-}
+    }
 
 
 

@@ -63,6 +63,7 @@ function logOut() {
 
 async function loadDynamicContentContainer(translationKey) {
     const dynamicContentContainer = document.getElementById('dynamicContentContainer');
+
     const htmlPage = await fetch(`${translationKey}.html`);
     const jsFile = await fetch(`./Js/${translationKey}.js`);
     var ksFileContent = await jsFile.text();
@@ -71,8 +72,6 @@ async function loadDynamicContentContainer(translationKey) {
 
     if (htmlPage.ok) {
         dynamicContentContainer.innerHTML = await htmlPage.text();
-
-
     } else {
         console.error(`Failed to fetch content for ${translationKey}`);
     }
