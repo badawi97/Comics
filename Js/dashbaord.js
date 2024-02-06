@@ -65,7 +65,6 @@ async function loadDynamicContentContainer(translationKey) {
     const dynamicContentContainer = document.getElementById('dynamicContentContainer');
     const htmlPage = await fetch(`${translationKey}.html`);
     const jsFile = await fetch(`./Js/${translationKey}.js`);
-
     var ksFileContent = await jsFile.text();
     eval(ksFileContent)
 
@@ -76,6 +75,23 @@ async function loadDynamicContentContainer(translationKey) {
 
     } else {
         console.error(`Failed to fetch content for ${translationKey}`);
+    }
+}
+
+async function uploadCover() {
+    var formData = new FormData();
+    formData.append('imageFile', document.getElementById('imageFile').files[0]);
+
+    try {
+        var response = await fetch('./Php/upload.php', {
+            method: 'POST',
+            body: formData
+        });
+        var data = await response.json();
+        console.log('Image uploaded:', data);
+        // Handle the response as needed
+    } catch (error) {
+        console.error('Error uploading image:', error);
     }
 }
 

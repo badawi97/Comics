@@ -1,9 +1,14 @@
 <h1 data-translation-key="createNewComic"></h1>
-<form id="comicForm" enctype="multipart/form-data">
+<form id="comicForm">
     <div class="row">
         <div class="col-12 body-main">
             <label for="imageFiles">
-                <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*" required>
+                Comic Images
+                <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*">
+            </label>
+            <label for="imageFile">
+                Comic Cover Image
+                <input type="file" name="imageFile" id="imageFile" accept="image/*" required>
             </label>
             <label for="">
                 <input type="text" id="title" placeholder="Title">
@@ -16,7 +21,7 @@
                     <option value="0" hidden data-translation-key="selectOne"></option>
                 </select>
             </label>
-            <button type="submit" onclick="saveComic()">Submit</button>
+            <button onclick="uploadCover()" id="saveComic" type="button">Submit</button>
         </div>
     </div>
 </form>

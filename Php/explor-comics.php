@@ -45,7 +45,8 @@ if ($result->num_rows > 0) {
             'publishedBy' => $row['PublishedBy'],
             'description' => $row['Description'],
             'publishedOn' => $row['PublishedOn'],
-            'typeId' => $row['TypeId']
+            'typeId' => $row['TypeId'],
+            'coverImagePath' => $row['CoverImagePath']
         ];
     }
 }

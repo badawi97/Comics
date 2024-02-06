@@ -1,5 +1,15 @@
-<!-- exploreComics.html -->
-<div>
-    <h2>Favourite</h2>
+<h2>Explore Comics</h2>
 
-</div>
+<form>
+    <div class="radio-buttons" id="radioButtonsContainer">
+    </div>
+    <div class="container mt-4">
+        <div class="body-main flex-container">
+            <label style="margin-left: 1%;" for="searchInput">
+                <input type="text" id="searchInput" placeholder="Enter comic title">
+            </label>
+            <button class="black-button rounded-button pointer" onclick="searchComics()">Search</button>
+        </div>
+        <div id="comicsContainer" class="row"></div>
+    </div>
+</form>

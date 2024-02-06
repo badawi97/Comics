@@ -5,7 +5,6 @@ async function searchComics() {
     if (result.length === 0) {
         searchResults.innerHTML = 'No results found.';
     } else {
-
         displayComics(result);
     }
 }
@@ -21,7 +20,7 @@ function displayComics(comics) {
                 <span class="card-title">${comic.title}</span>
                 <i onclick="addToFavorite(${comic.id})" class="fa fa-heart add-favourite-btn" aria-hidden="true"></i>
                 <a href="comic-viewer.html?comic=${comic.id}">
-                    <img class="d-block w-100" height="210" src="Images/Comics/Screenshot 2024-01-13 182825.png" alt="${comic.title}">
+                    <img class="d-block w-100" height="210" src="${comic.coverImagePath}" alt="${comic.title}">
                 </a>
                 <a href="comic-viewer.html?comic=${comic.id}" class="overlay"></a>
             </div>
@@ -45,11 +44,16 @@ function populateRadioButtons(comicTypes) {
         label.classList.add("white-button", "radio-button");
         label.setAttribute("for", comicType.name);
         label.innerHTML = `
-        <input onchange="await filterComics()" type="radio" id="${comicType.name}"  name="comicFilterType" class="hidden-radio" value="${comicType.id}">
+        <input type="radio" id="${comicType.name}"  name="comicFilterType" class="hidden-radio" value="${comicType.id}">
         `
         var textNode = document.createTextNode(comicType.name);
         label.appendChild(textNode);
         radioButtonsContainer.appendChild(label);
+        // Get the dynamically created input element
+        var radioButton = label.querySelector('input[type="radio"]');
+
+        // Attach event listener to the input element
+        radioButton.addEventListener('click', filterComics);
     });
     setDefualtFilterType();
 }
@@ -61,7 +65,6 @@ async function filterComics() {
     var selectedType = document.querySelector('input[name="comicFilterType"]:checked');
     selectedType.parentElement.classList.add('active');
     const response = await fetch(`./Php/explor-comics.php?type=${selectedType.value}&searchInput${searchInput}`);
-
     const result = await response.json();
     displayComics(result);
 }

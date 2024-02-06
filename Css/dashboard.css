@@ -25,3 +25,22 @@
     color: #000;
     font-size: 24px;
 }
+
+#mainContent {
+    scrollbar-width: thin;
+    overflow-y: scroll;
+}
+
+#mainContent::-webkit-scrollbar {
+    width: 11px !important;
+}
+
+#mainContent::-webkit-scrollbar-track {
+    background: var(--secondaryColor) !important;
+}
+
+#mainContent::-webkit-scrollbar-thumb {
+    background-color: var(--primeColor) !important;
+    border-radius: 6px !important;
+    border: 3px solid var(--secondaryColor) !important;
+}

@@ -18,6 +18,7 @@ function uploadComic() {
 }
 
 function saveComic() {
+    debugger
     var comicForm = document.getElementById('comicForm');
     var title = document.getElementById("title").value;
     var description = document.getElementById("description").value;
@@ -47,9 +48,10 @@ function saveComic() {
 }
 
 async function getComicsTypes() {
+
     // Fetch comic types from PHP using AJAX
     var response = await fetch('./Php/comic-type.php')
-    var comicTypes =await response.json();
+    var comicTypes = await response.json();
     // Populate select element with comic types
     var selectElement = document.getElementById('comicsTypes');
     comicTypes.forEach(comicType => {
@@ -59,7 +61,10 @@ async function getComicsTypes() {
         option.setAttribute('data-translation-key', comicType.name);
         selectElement.appendChild(option);
     });
+
 }
+
+
 
 
 
