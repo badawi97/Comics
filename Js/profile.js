@@ -21,6 +21,7 @@ async function fetchProfileDetials() {
 
   const userData = await response.json();
   if (userData.length > 0) {
+    debugger
     const user = userData[0]; // Assuming only one user is fetched
     document.getElementById("fName").value = user.first_name;
     document.getElementById("lName").value = user.last_name;
@@ -28,6 +29,7 @@ async function fetchProfileDetials() {
     document.getElementById("username").value = user.username;
     document.getElementById("phone").value = user.phone; // Assuming 'phone' is a field in your user data
     document.getElementById("address").value = user.address;
+    document.getElementById("profile-img").src = user.image_path;
   }
 }
 async function savePassword() {

@@ -36,7 +36,7 @@ function submitForm() {
     // Append image file
     var imageFile = document.getElementById('imageInput').files[0];
     if (imageFile) {
-        formData.append('image', imageFile);
+        formData.append('imageFile', imageFile);
     }
 
     var registrationForm = document.getElementById("registrationForm");
