@@ -32,5 +32,8 @@
     "createNewComic": "انشاء قصة مصورة جديدة",
     "profile": "الملف الشخصي",
     "enterComicTitle": "ادخل عنوان القصة",
-    "search": "ابحث"
+    "search": "ابحث",
+    "home": "الرئيسية",
+    "saveComic": "حفظ القصة",
+    "comicCover": "غلاف القصة"
 }

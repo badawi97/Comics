@@ -80,6 +80,11 @@ async function loadDynamicContentContainer(translationKey) {
 async function uploadCover() {
     var formData = new FormData();
     formData.append('imageFile', document.getElementById('imageFile').files[0]);
+    formData.append('imageFiles', document.getElementById('imageFiles').files[0]);
+    formData.append('title', document.getElementById('title').value);
+    formData.append('description', document.getElementById('description').value);
+    formData.append('comicsTypes', document.getElementById('comicsTypes').value);
+    formData.append('publishedBy', localStorage.getItem('userId'));
 
     try {
         var response = await fetch('./Php/upload.php', {
@@ -88,12 +93,15 @@ async function uploadCover() {
         });
         var data = await response.json();
         console.log('Image uploaded:', data);
+        alert("Comic have been Created !")
+        loadDynamicContentContainer('explore-comics');
         // Handle the response as needed
     } catch (error) {
         console.error('Error uploading image:', error);
     }
 }
 
+document.getElementById('displayUserName').innerHTML = localStorage.getItem('userName')
 window.addEventListener('load', setSidebarHeight);
 
 window.addEventListener('resize', setSidebarHeight);

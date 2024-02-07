@@ -81,27 +81,28 @@
                 <!-- Add your sidebar content here -->
                 <ul id="sidebarItems" class="nav flex-column align-content-center f-1-2 py-4 h-100">
                     <li class="nav-item">
-                        <a class="nav-link text-white" style="cursor: default !important" href="#">
-                            <img id="profileImage" style="border-radius: 50%; " class="w-100" height="150"
-                                src="Images/avatars/female-hjab-avatart.jpeg" alt="">
-                        </a>
+                        <img id="profileImage" style="border-radius: 50%; " class="w-100" height="150"
+                            src="Images/avatars/female-hjab-avatart.jpeg" alt="">
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item text-center" id="displayUserName">
+
+                    </li>
+                    <li class="nav-item mt-2 text-right">
                         <a class="nav-link text-white" name="sidebarItems" role="explore-comics"
                             data-translation-key="exploreComics" href="#"></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mt-2 text-right">
                         <a class="nav-link text-white" name="sidebarItems" role="my-comics"
                             data-translation-key="myComics" href="#"></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mt-2 text-right">
                         <a class="nav-link text-white" name="sidebarItems" role="favourite"
                             data-translation-key="favourite" href="#"></a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link text-white" name="sidebarItems" role="reports" data-translation-key="reports"
                             href="#"></a>
-                    </li>
+                    </li> -->
                     <li class="nav-item mt-auto">
                         <a class="nav-link btn btn-danger" onclick="logOut()" data-translation-key="logout"
                             href="#"></a>
@@ -112,9 +113,9 @@
             </nav>
 
             <!-- Main content -->
-            <main id="mainContent" style="overflow-y: scroll;"  class="col-md-10 d-md-block main-content">
+            <main id="mainContent" style="overflow-y: scroll;" class="col-md-10 d-md-block main-content">
                 <!-- Add your main content here -->
-                <div id="dynamicContentContainer" >
+                <div id="dynamicContentContainer">
                     <!-- Your content goes here -->
                 </div>
                 <!-- #region Footer-->
@@ -188,11 +189,12 @@
     <script src="Js/dashbaord.js"></script>
     <script src="Js/scrollTopBtn.js"></script>
     <script src="Js/language.js"></script>
-<!-- 
-    <script src="Js/explor-comics.js"></script>
+
+    <script src="Js/explore-comics.js"></script>
     <script src="Js/add-favourite.js"></script>
-    <script src="Js/reports.js"></script>
-    <script src="Js/new-comic.js"></script> -->
+    <!-- <script src="Js/reports.js"></script> -->
+    <script src="Js/new-comic.js"></script>
+    <script src="Js/profile.js"></script>
 
 
     <!-- #region bootstrap cdn  -->

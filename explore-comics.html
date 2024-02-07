@@ -1,4 +1,11 @@
-<h2>Explore Comics</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" data-translation-key="home"><a
+                onclick="loadDynamicContentContainer('explore-comics')" href="#">الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page" data-translation-key="exploreComics">البحث بالقصص</li>
+    </ol>
+</nav>
+
 
 <form>
     <div class="radio-buttons" id="radioButtonsContainer">
@@ -10,7 +17,7 @@
                 <input type="text" id="searchInput" placeholder="enterComicTitle">
             </label>
             <button class="black-button rounded-button pointer" data-translation-key="search"
-                onclick="searchComics()"></button>
+                onclick="searchComics()">ابحث</button>
         </div>
         <div id="comicsContainer" class="row"></div>
         <!-- Comics cards will be dynamically added here -->

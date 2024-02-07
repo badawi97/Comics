@@ -1,28 +1,43 @@
-<h1 data-translation-key="createNewComic"></h1>
-<form id="comicForm">
-    <div class="row">
-        <div class="col-12 body-main">
-            <label for="imageFiles">
-                Comic Images
-                <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*">
-            </label>
-            <label for="imageFile">
-                Comic Cover Image
-                <input type="file" name="imageFile" id="imageFile" accept="image/*" required>
-            </label>
-            <label for="title">
-                <input type="text" id="title" placeholder="Title">
-            </label>
-            <label for="description">
-                <textarea id="description" placeholder="description"></textarea>
-            </label>
-            <label for="comicsTypes">
-                <select id="comicsTypes">
-                    <option value="0" hidden data-translation-key="selectOne"></option>
-                </select>
-            </label>
-            <button onclick="uploadCover()" id="saveComic" type="button">Submit</button>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" data-translation-key="home"><a
+                onclick="loadDynamicContentContainer('explore-comics')" href="#">الرئيسية</a></li>
+        <li class="breadcrumb-item" data-translation-key="home"><a
+                onclick="loadDynamicContentContainer('explore-comics')" href="#">البحث بالقصص</a></li>
+        <li class="breadcrumb-item active" aria-current="page" data-translation-key="createNewComic">انشاء قصة مصورة
+            جديدة</li>
+    </ol>
+</nav>
+
+<div class="container-fluid white-background mt-4 p-5">
+
+    <form id="comicForm">
+        <div class="row">
+            <div class="col-lg-12 body-main">
+                <label style="text-align: right;" for="imageFiles">
+                    صور القصة
+                    <input type="file" name="imageFiles[]" id="imageFiles" multiple accept="image/*">
+                </label>
+                <label for="imageFile" style="text-align: right;" data-translation-key="comicCover">
+                    غلاف القصة
+                    <input type="file" name="imageFile" id="imageFile" accept="image/*" required>
+                </label>
+                <label for="title">
+                    <input type="text" id="title" placeholder="عنوان القصة">
+                </label>
+                <label for="description">
+                    <textarea id="description" placeholder="وصف القصة"></textarea>
+                </label>
+                <label for="comicsTypes" class="width-100" style="text-align: right;">
+                    نوع القصة
+                    <select style="width: 50%;display: block;padding: 4px;" id="comicsTypes">
+                        <option value="0" hidden data-translation-key="selectOne">أختر</option>
+                    </select>
+                </label>
+                <button onclick="uploadCover()" class="rounded-button black-button width-100-percent mt-5" type="button"
+                    data-translation-key="saveComic">حفظ القصة
+                </button>
+            </div>
         </div>
-    </div>
-</form>
-<div id="output"></div>
+    </form>
+</div>

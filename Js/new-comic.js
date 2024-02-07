@@ -18,7 +18,6 @@ function uploadComic() {
 }
 
 function saveComic() {
-    debugger
     var comicForm = document.getElementById('comicForm');
     var title = document.getElementById("title").value;
     var description = document.getElementById("description").value;
@@ -41,7 +40,6 @@ function saveComic() {
         body: formData
     }).then(response => {
         comicForm.reset();
-        window.location.href = "dashboard.html";
     }).catch(error => {
         // Handle error
     });
@@ -54,6 +52,7 @@ async function getComicsTypes() {
     var comicTypes = await response.json();
     // Populate select element with comic types
     var selectElement = document.getElementById('comicsTypes');
+    comicTypes = comicTypes.filter(comicType => comicType.id !== '11');
     comicTypes.forEach(comicType => {
         var option = document.createElement('option');
         option.value = comicType.id;
@@ -62,7 +61,7 @@ async function getComicsTypes() {
         selectElement.appendChild(option);
     });
 
-    }
+}
 
 
 

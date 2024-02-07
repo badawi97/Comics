@@ -43,5 +43,8 @@
     "SUPERNATURAL": "Supernatural",
     "profile": "Profile",
     "enterComicTitle": "Enter Comic Title",
-    "search": "Search"
+    "search": "Search",
+    "home": "Home",
+    "saveComic": "Save Comic",
+    "comicCover":"Comic Cover"
 }

@@ -1,15 +1,15 @@
 let translation;
 
-async function loadTranslations(language) {
-    const lang = language || localStorage.getItem('lang') || 'en';
-
-    if (lang === 'ar') {
+async function loadTranslations() {
+    if (getCurrentLanguage() === 'ar') {
         const translationArabicFile = await fetch('Translation/ar.json');
         translation = await translationArabicFile.json();
-    } else {
+    }
+    else {
         const translationEnglishFile = await fetch('Translation/en.json');
         translation = await translationEnglishFile.json();
     }
+
 }
 
 function translatePage() {
@@ -33,16 +33,17 @@ function translatePage() {
             placeholder.setAttribute('placeholder', translatedText);
         }
     });
-
     document.documentElement.dir = getCurrentLanguage() === 'ar' ? 'rtl' : 'ltr';
+
 }
 
 async function toggleLanguage() {
-    const language = document.getElementById('language').value;
-    document.documentElement.lang = language;
-    localStorage.setItem('lang', language);
-    await loadTranslations(language);
+    var language = document.getElementById('language');
+    document.documentElement.lang = language.value;
+    await loadTranslations();
     translatePage();
+
+
 }
 
 function getCurrentLanguage() {
@@ -50,7 +51,6 @@ function getCurrentLanguage() {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-    const storedLang = localStorage.getItem('lang');
-    await loadTranslations(storedLang);
+    await loadTranslations();
     translatePage();
 });

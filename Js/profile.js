@@ -21,7 +21,6 @@ async function fetchProfileDetials() {
 
   const userData = await response.json();
   if (userData.length > 0) {
-    debugger
     const user = userData[0]; // Assuming only one user is fetched
     document.getElementById("fName").value = user.first_name;
     document.getElementById("lName").value = user.last_name;

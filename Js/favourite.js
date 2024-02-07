@@ -1,6 +1,6 @@
 async function searchComics() {
     const searchInput = document.getElementById('searchInput').value;
-    const response = await fetch(`./Php/explor-comics.php?q=${encodeURIComponent(searchInput)}`);
+    const response = await fetch(`./Php/favourite.php?q=${encodeURIComponent(searchInput)}`);
     const result = await response.json();
     if (result.length === 0) {
         searchResults.innerHTML = 'No results found.';
@@ -64,7 +64,7 @@ async function filterComics() {
     radioButtons.forEach(btn => btn.classList.remove('active'));
     var selectedType = document.querySelector('input[name="comicFilterType"]:checked');
     selectedType.parentElement.classList.add('active');
-    const response = await fetch(`./Php/explor-comics.php?type=${selectedType.value}&searchInput${searchInput}`);
+    const response = await fetch(`./Php/favourite.php?type=${selectedType.value}&searchInput${searchInput}`);
     const result = await response.json();
     displayComics(result);
 }

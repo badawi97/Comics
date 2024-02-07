@@ -19,19 +19,20 @@ if ($conn->connect_error) {
 }
 
 // Get the search query from the URL parameter
-
-$comicType = $_GET['type'];
+$comicType = !empty($_GET['type']) ? $_GET['type'] : null;
+$searchInput = !empty($_GET['searchInput']) ? $_GET['searchInput'] : null;
+$userId = !empty($_GET['userId']) ? (int)$_GET['userId'] : 0;
 $comicTypeInt = (int)$comicType;
-
 
 // Build SQL query
 $sql = "";
 if ($comicTypeInt === 11) {
     // If comicTypeInt is 11, get all records
-    $sql = "SELECT * FROM comic";
+    $sql = "SELECT * FROM comic INNER JOIN favourite ON comic.Id =favourite.ComicId WHERE favourite.UserId=1";
 } else {
     // Otherwise, filter records based on TypeId
-    $sql = "SELECT * FROM comic WHERE TypeId = $comicTypeInt";
+    $sql = "SELECT * FROM comic INNER JOIN favourite ON comic.Id =favourite.ComicId WHERE favourite.UserId=1 AND
+    typeId = $comicTypeInt";
 }
 $result = $conn->query($sql);
 $searchResults = [];

@@ -1,23 +1,41 @@
-<img
-  class="profile-img"
-  src="Images/profile-img.png"
-  alt="Profile Picture"
-  height="200"
-  width="200"
-  id="profile-img"
-/>
-<input disabled id="fName" type="text" placeholder="First Name" />
-<input disabled id="lName" type="text" placeholder="Last Name" />
-<input disabled id="email" type="email" placeholder="Email" />
-<input disabled id="username" type="text" placeholder="Username" />
-<input disabled id="phone" type="tel" placeholder="Phone Number" />
-<input disabled id="address" type="text" placeholder="Address" />
-<button onclick="updateProfile()" id="editSaveBtn">Edit</button>
-<button id="changePassword">Change Password</button>
-<!-- The Modal -->
-<!-- Modal content -->
-<input id="oldPassword" type="text" placeholder="old Password" />
-<input id="newPassword" type="text" placeholder="new Password" />
-<input id="confirmPassword" type="text" placeholder="confirm Password" />
-<button onclick="savePassword()" id="saveBtn">Save</button>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" data-translation-key="home"><a onclick="loadDynamicContentContainer('explore-comics')"
+        href="#">الرئيسية</a></li>
+    <li class="breadcrumb-item" data-translation-key="home"><a onclick="loadDynamicContentContainer('explore-comics')"
+        href="#">البحث بالقصص</a></li>
+    <li class="breadcrumb-item active" aria-current="page" data-translation-key="createNewComic">
+      الملف الشخصي
+    </li>
+  </ol>
+</nav>
+<div class="container-fluid white-background mt-4 p-5">
 
+  <form id="prfileForm">
+
+    <div class="row">
+      <div class="col-lg-3">
+        <img class="profile-img" src="Images/profile-img.png" alt="Profile Picture" height="200" width="200"
+          id="profile-img" />
+      </div>
+      <div class="col-lg-9">
+        <label for="fName">
+          <input disabled id="fName" type="text" placeholder="First Name" />
+        </label>
+        <input disabled id="lName" type="text" placeholder="Last Name" />
+        <input disabled id="email" type="email" placeholder="Email" />
+        <input disabled id="username" type="text" placeholder="Username" />
+        <input disabled id="phone" type="tel" placeholder="Phone Number" />
+        <input disabled id="address" type="text" placeholder="Address" />
+        <button onclick="updateProfile()" id="editSaveBtn">Edit</button>
+        <button id="changePassword">Change Password</button>
+        <!-- The Modal -->
+        <!-- Modal content -->
+        <input id="oldPassword" type="text" placeholder="old Password" />
+        <input id="newPassword" type="text" placeholder="new Password" />
+        <input id="confirmPassword" type="text" placeholder="confirm Password" />
+        <button onclick="savePassword()" id="saveBtn">Save</button>
+      </div>
+    </div>
+  </form>
+</div>

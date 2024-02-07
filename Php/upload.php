@@ -37,15 +37,22 @@ if (!empty($_FILES['imageFile']['name'])) {
         }
 
         $coverPath = str_replace('../', '', $coverPath);
-        $stmt = $conn->prepare("INSERT INTO comic (CoverImagePath) VALUES (?)");
-        $stmt->bind_param("s", $coverPath);
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $comicsTypes = $_POST['comicsTypes'];
+        $publishedBy = $_POST['publishedBy'];
+        $publishedOn = date("Y-m-d");
+        
+        $stmt = $conn->prepare("INSERT INTO comic (CoverImagePath, Title, Description, TypeId, PublishedBy, PublishedOn) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $coverPath, $title, $description, $comicsTypes, $publishedBy, $publishedOn);
+
 
         // Execute statement
         if ($stmt->execute()) {
             echo json_encode(array("success" => "The file " . htmlspecialchars($name) . " has been uploaded and inserted into the database."));
         } else {
             echo json_encode(array("error" => "Sorry, there was an error inserting data into the database."));
-        }   
+        }
 
         // Close statement and connection
         $stmt->close();
