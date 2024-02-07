@@ -18,23 +18,40 @@
         <img class="profile-img" src="Images/profile-img.png" alt="Profile Picture" height="200" width="200"
           id="profile-img" />
       </div>
-      <div class="col-lg-9">
+      <div class="col-lg-9 body-main">
         <label for="fName">
           <input disabled id="fName" type="text" placeholder="First Name" />
         </label>
-        <input disabled id="lName" type="text" placeholder="Last Name" />
-        <input disabled id="email" type="email" placeholder="Email" />
-        <input disabled id="username" type="text" placeholder="Username" />
-        <input disabled id="phone" type="tel" placeholder="Phone Number" />
-        <input disabled id="address" type="text" placeholder="Address" />
-        <button onclick="updateProfile()" id="editSaveBtn">Edit</button>
-        <button id="changePassword">Change Password</button>
+        <label for="lName">
+          <input disabled id="lName" type="text" placeholder="Last Name" />
+        </label>
+        <label for="email">
+          <input disabled id="email" type="email" placeholder="Email" />
+        </label>
+        <label for="username">
+          <input disabled id="username" type="text" placeholder="Username" />
+        </label>
+        <label for="phone">
+          <input disabled id="phone" type="tel" placeholder="Phone Number" />
+        </label>
+        <label for="address">
+          <input disabled id="address" type="text" placeholder="Address" />
+        </label>
+
+        <!-- <button id="changePassword">Change Password</button> -->
         <!-- The Modal -->
         <!-- Modal content -->
-        <input id="oldPassword" type="text" placeholder="old Password" />
-        <input id="newPassword" type="text" placeholder="new Password" />
-        <input id="confirmPassword" type="text" placeholder="confirm Password" />
-        <button onclick="savePassword()" id="saveBtn">Save</button>
+        <label for="address">
+          <input id="oldPassword" type="text" placeholder="old Password" />
+        </label>
+        <label for="address">
+          <input id="newPassword" type="text" placeholder="new Password" />
+        </label>
+        <label for="address">
+          <input id="confirmPassword" type="text" placeholder="confirm Password" />
+        </label>
+        <button onclick="updateProfile()" class="rounded-button black-button width-100-percent mt-5"
+          id="editSaveBtn">Edit</button>
       </div>
     </div>
   </form>
